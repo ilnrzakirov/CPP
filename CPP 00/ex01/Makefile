@@ -1,6 +1,6 @@
 NAME = megaphone
 
-SRC = Contact.hpp
+SRC = Contact.hpp Contact.cpp
 
 CC = c++
 
