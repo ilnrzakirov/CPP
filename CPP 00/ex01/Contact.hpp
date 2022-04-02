@@ -1,7 +1,8 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-# include <iostream>
+# include <iostream> // библиотека вводы вывода
+# include <string>
 
 class	Contact {
 
