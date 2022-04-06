@@ -36,3 +36,7 @@ std::string	Contact::get_nickname()
 {
 	return this->nickname;
 }
+
+void Contact::create_contact() {
+	
+}

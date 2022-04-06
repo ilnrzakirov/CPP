@@ -10,7 +10,7 @@ private:
 
 public:
 	PhoneBook();
-	void add_contact(Contact contact);
+	void add_contact();
 	void search();
 	void exit();
 	~PhoneBook();

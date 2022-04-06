@@ -8,9 +8,10 @@ PhoneBook:: ~PhoneBook()
 {
 }
 
-void PhoneBook::add_contact(Contact contact) {
+void PhoneBook::add_contact(void) {
+
 	if (this->number == 8) {
-		this->contact[0] = contact;
+		this->contact[0].create_contact();
 	}
 	else
 	{

@@ -24,6 +24,7 @@ public:
 	std::string get_first_name();
 	std::string get_last_name();
 	std::string get_nickname();
+	void create_contact();
 	~Contact(); // Деструктор
 };
 
