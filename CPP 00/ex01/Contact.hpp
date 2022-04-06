@@ -4,7 +4,7 @@
 # include <iostream> // библиотека вводы вывода
 # include <string>
 
-class	Contact {
+class	Contact { //описание класса Contact
 
 private:
 	std::string	first_name; // std - пространство имен STD, string - класс
@@ -24,8 +24,7 @@ public:
 	std::string get_first_name();
 	std::string get_last_name();
 	std::string get_nickname();
-	~Contact();
-
+	~Contact(); // Деструктор
 };
 
 #endif
