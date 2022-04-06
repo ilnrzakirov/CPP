@@ -9,9 +9,11 @@ private:
 	int number;
 
 public:
+	PhoneBook();
 	void add_contact(Contact contact);
 	void search();
 	void exit();
+	~PhoneBook();
 };
 
 #endif
