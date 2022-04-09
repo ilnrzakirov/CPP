@@ -10,6 +10,7 @@ private:
 	int number;
 	void viewContacts() const;
 	void NumContact() const;
+	void viewFullInfo(Contact contact) const;
 
 public:
 	PhoneBook();

@@ -72,6 +72,15 @@ void    PhoneBook::getMan()
 	std::cout << "+-------------------------------------------------------+\n";
 }
 
+void	PhoneBook::viewFullInfo(Contact contact) const
+{
+	std::cout << "|" << "FirstName:       |" << contact.getFirstName() << "|\n";
+	std::cout << "|" << "LastName:        |" << contact.getLastName() << "|\n";
+	std::cout << "|" << "NickName:        |" << contact.getNickName() << "|\n";
+	std::cout << "|" << "Phone Number:    |" << contact.getPhoneNumber() << "|\n";
+	std::cout << "|" << "Darkest Secret:  |" << contact.getDarkSercret() << "|\n";
+}
+
 void	PhoneBook::NumContact(void) const
 {
 	std::string s_id;
