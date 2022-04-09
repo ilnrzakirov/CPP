@@ -70,7 +70,7 @@ void PhoneBook::viewContacts() const
 	std::cout << "+--------------------------------------+\n";
 }
 
-void    PhoneBook::getMan()
+void    PhoneBook::getMain()
 {
 	std::cout << "+-------------------------------------------------------+\n";
 	std::cout << "|                  AVAILABLE COMMANDS                   |\n";

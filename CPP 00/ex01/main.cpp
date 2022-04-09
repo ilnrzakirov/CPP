@@ -6,7 +6,7 @@ int	main(void)
 	PhoneBook	PhoneBook;
 	std::string cmd;
 
-	PhoneBook.getMan();
+	PhoneBook.getMain();
 	while(true)
 	{
 		std::cout <<"Enter the command:\n";

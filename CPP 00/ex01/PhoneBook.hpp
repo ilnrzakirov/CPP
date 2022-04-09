@@ -14,7 +14,7 @@ private:
 public:
 	PhoneBook();
 	void addContact();
-	void getMan();
+	void getMain();
 	void searchContact() const;
 	~PhoneBook();
 };
