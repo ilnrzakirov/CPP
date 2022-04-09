@@ -29,7 +29,7 @@ int	main(void)
 		}
 		else
 		{
-			std:: cout << "Sorry, comamnd not found :(" << std::endl;
+			std:: cout << "Command not found" << std::endl;
 		}
 	}
 	return (0);

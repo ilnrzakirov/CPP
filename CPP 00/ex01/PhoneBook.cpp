@@ -104,5 +104,5 @@ void	PhoneBook::searchContact(void) const
 		return ;
 	}
 	viewContacts();
-	readConsoleNumContact();
+	NumContact();
 }
