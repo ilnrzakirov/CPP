@@ -22,3 +22,11 @@ int Account::getNbDeposits(){
 int Account::getNbWithdrawals(){
 	return (Account::_nbWithdrawals);
 }
+
+static void	displayAccountsInfos( void ){
+	time_t now;
+	struct tm ptr;
+
+	time(&now);
+	ptr = localtime(&now);
+}
