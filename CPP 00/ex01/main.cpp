@@ -1,4 +1,5 @@
 #include "./Contact.hpp"
+#include "./PhoneBook.hpp"
 
 int	main(void)
 {
@@ -9,7 +10,7 @@ int	main(void)
 	while(true)
 	{
 		std::cout <<"Enter the command:\n";
-		if (!(void)std::getline(std::cin, cmd))
+		if (!std::getline(std::cin, cmd))
 		{
 			std::cout << "GoodBye!\n";
 			return (1);

@@ -22,27 +22,27 @@ Contact::~Contact()
 {
 }
 
-std::string	Contact::getFirstName()
+std::string	Contact::getFirstName() const
 {
 	return this->first_name;
 }
 
-std::string	Contact::getLastName()
+std::string	Contact::getLastName() const
 {
 	return this->last_name;
 }
 
-std::string	Contact::getNickName()
+std::string	Contact::getNickName() const
 {
 	return this->nickname;
 }
 
-std::string	Contact::getDarkSecret()
+std::string	Contact::getDarkSecret() const
 {
 	return (this->darkest_secret);
 }
 
-std::string	Contact::getPhoneNumber()
+std::string	Contact::getPhoneNumber() const
 {
 	return (this->phone_number);
 }
@@ -77,24 +77,24 @@ void		Contact::setData(void)
 	std::string word;
 
 	std::cout << "Please Enter firstName:\n";
-	(void)std::getline(std::cin, word);
+	std::getline(std::cin, word);
 	this->setFirstName(word);
 
 	std::cout << "Please Enter lastName:\n";
-	(void)std::getline(std::cin, word);
+	std::getline(std::cin, word);
 	this->setLastName(word);
 
 	std::cout << "Please Enter nickName:\n";
-	(void)std::getline(std::cin, word);
+	std::getline(std::cin, word);
 	this->setNickName(word);
 
 	std::cout << "Please Enter phoneNumber:\n";
-	(void)std::getline(std::cin, word);
+	std::getline(std::cin, word);
 	this->setPhoneNumber(word);
 
 	std::cout << "Please Enter darkestSecret:\n";
-	(void)std::getline(std::cin, word);
-	this->setDarkSercret(word);
+	std::getline(std::cin, word);
+	this->setDarkSecret(word);
 
 	std::cout << "\nThank you, new contact is created!\n";
 }
@@ -112,8 +112,8 @@ bool 	Contact::isEmpty() {
 	if (this->getNickName().empty()){
 		return (true);
 	}
-	if (this>getPhoneNumber().empty()){
-		return (true)
+	if (this->getPhoneNumber().empty()){
+		return (true);
 	}
 	return (false);
 }

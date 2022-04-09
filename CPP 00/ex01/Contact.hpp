@@ -4,6 +4,7 @@
 # include <iostream> // библиотека вводы вывода
 # include <string>
 # include <stdlib.h>
+#include <iomanip>
 
 class	Contact { //описание класса Contact
 
@@ -29,11 +30,11 @@ public:
 	void	setNickName(std::string word);
 	void 	setData(void);
 	bool 	isEmpty();
-	std::string getFirstName();
-	std::string getLastName();
-	std::string	getNickName();
-	std::string getDarkSecret();
-	std::string	getPhoneNumber();
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	std::string	getNickName() const;
+	std::string getDarkSecret() const;
+	std::string	getPhoneNumber() const;
 	~Contact(); // Деструктор
 };
 

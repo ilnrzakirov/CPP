@@ -10,12 +10,12 @@ private:
 	void viewContacts() const;
 	void NumContact() const;
 	void viewFullInfo(Contact contact) const;
-	void searchContact() const;
 
 public:
 	PhoneBook();
 	void addContact();
 	void getMan();
+	void searchContact() const;
 	~PhoneBook();
 };
 
