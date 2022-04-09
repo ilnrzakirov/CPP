@@ -3,7 +3,27 @@
 #include <ctime>
 #include <iomanip>
 
-Account::Account(){};
+Account::_nbAccounts = 0;
+Account::_totalAmount = 0;
+Account::_totalNbDeposits = 0;
+Account::_totalNbWithdrawals = 0;
+
+Account::Account(int initial_deposit): _accountIndex(Account::_nbAccounts++),
+			_amount(initial_deposit), _nbWithdrawals(0), _nbDeposits(0)
+{
+	Account::_totalAmount +=initial_deposit;
+	Account::_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";" << "amount:"
+			  << this->_amount << ";created";
+};
+
+Account::Account(void) : _accountIndex(Account::_nbAccounts++), _amount(0),
+						 _nbWithdrawals(0), _nbDeposits(0)
+{
+	Account::_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";" << "amount:"
+			  << this->_amount << ";created";
+}
 
 Account::~Account(){};
 
@@ -40,3 +60,4 @@ static void	displayAccountsInfos(){
 		 << std::setw(1)
 		 << "]";
 }
+
