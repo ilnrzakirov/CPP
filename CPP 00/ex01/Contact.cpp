@@ -67,7 +67,7 @@ void		Contact::setPhoneNumber(std::string word)
 	this->phone_number = word;
 }
 
-void		Contact::setDarkSercret(std::string word)
+void		Contact::setDarkSecret(std::string word)
 {
 	this->darkest_secret = word;
 }
@@ -77,23 +77,23 @@ void		Contact::setData(void)
 	std::string word;
 
 	std::cout << "Please Enter firstName:\n";
-	std::getline(std::cin, &word);
+	(void)std::getline(std::cin, word);
 	this->setFirstName(word);
 
-	std::cout << "Please Enter LastName:\n";
-	std::getline(std::cin, &word);
+	std::cout << "Please Enter lastName:\n";
+	(void)std::getline(std::cin, word);
 	this->setLastName(word);
 
 	std::cout << "Please Enter nickName:\n";
-	std::getline(std::cin, &word);
+	(void)std::getline(std::cin, word);
 	this->setNickName(word);
 
 	std::cout << "Please Enter phoneNumber:\n";
-	std::getline(std::cin, &word);
+	(void)std::getline(std::cin, word);
 	this->setPhoneNumber(word);
 
 	std::cout << "Please Enter darkestSecret:\n";
-	std::getline(std::cin, &word);
+	(void)std::getline(std::cin, word);
 	this->setDarkSercret(word);
 
 	std::cout << "\nThank you, new contact is created!\n";
