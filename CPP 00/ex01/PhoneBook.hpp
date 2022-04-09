@@ -1,7 +1,6 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include <stdlib.h>
 # include "./Contact.hpp"
 
 class PhoneBook{
@@ -11,13 +10,12 @@ private:
 	void viewContacts() const;
 	void NumContact() const;
 	void viewFullInfo(Contact contact) const;
+	void searchContact() const;
 
 public:
 	PhoneBook();
-	void add_contact();
+	void addContact();
 	void getMan();
-	void search();
-	void exit();
 	~PhoneBook();
 };
 

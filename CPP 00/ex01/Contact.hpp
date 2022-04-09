@@ -3,6 +3,7 @@
 
 # include <iostream> // библиотека вводы вывода
 # include <string>
+# include <stdlib.h>
 
 class	Contact { //описание класса Contact
 

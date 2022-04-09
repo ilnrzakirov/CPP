@@ -9,7 +9,7 @@ PhoneBook:: ~PhoneBook() //деструктор
 {
 }
 
-void PhoneBook::add_contact(void) {
+void PhoneBook::addContact(void) {
 
 	if (this->number == 8) {
 		this->contact[0].setData();
@@ -89,10 +89,20 @@ void	PhoneBook::NumContact(void) const
 	std::cout << "Enter num contact:\n";
 	(void)getline(std::cin, s_id);
 	index = atoi(s_id.c_str());
-	if (index <= 0 || index > this->cntContact)
+	if (index <= 0 || index > this->number)
 	{
 		std::cout << "Contact not found :(\n";
 		return ;
 	}
 	viewFullInfo(contacts[index - 1]);
+}
+void	PhoneBook::searchContact(void) const
+{
+	if (this->number == 0)
+	{
+		std::cout << "Sorry, PhoneBook is empty\n";
+		return ;
+	}
+	viewContacts();
+	readConsoleNumContact();
 }
