@@ -23,7 +23,7 @@ int Account::getNbWithdrawals(){
 	return (Account::_nbWithdrawals);
 }
 
-static void	displayAccountsInfos( void ){
+static void	displayAccountsInfos(){
 	time_t now;
 	struct tm ptr;
 
