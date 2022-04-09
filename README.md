@@ -2,4 +2,4 @@
  Dive into OOP
 
 
-For detailed information, refer to the **[subject of this project](https://github.com/ilnrzakirov/CPP/blob/main/en.subject.pdf)**
+For detailed information, refer to the **[subject of CPP00](https://github.com/ilnrzakirov/CPP/blob/main/CPP%2000/en.subject.pdf)**
