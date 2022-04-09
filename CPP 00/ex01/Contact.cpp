@@ -22,19 +22,29 @@ Contact::~Contact()
 {
 }
 
-std::string	Contact::get_first_name()
+std::string	Contact::getFirst_name()
 {
 	return this->first_name;
 }
 
-std::string	Contact::get_last_name()
+std::string	Contact::getLast_name()
 {
 	return this->last_name;
 }
 
-std::string	Contact::get_nickname()
+std::string	Contact::getNickname()
 {
 	return this->nickname;
+}
+
+std::string	Contact::getDarkSecret()
+{
+	return (this->darkest_secret);
+}
+
+std::string	Contact::getPhoneNumber()
+{
+	return (this->phone_number);
 }
 
 void	Contact::setFirstName(std::string word)

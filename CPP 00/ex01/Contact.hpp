@@ -27,11 +27,11 @@ public:
 	void	setLastName(std::string word);
 	void	setNickName(std::string word);
 	void 	setData(void);
-	std::string get_first_name();
-	std::string get_last_name();
-	std::string get_nickname();
+	std::string getFirst_name();
+	std::string getLast_name();
 	std::string	getNickName();
-	void create_contact();
+	std::string getDarkSecret();
+	std::string	getPhoneNumber();
 	~Contact(); // Деструктор
 };
 

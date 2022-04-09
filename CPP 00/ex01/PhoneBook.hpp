@@ -7,6 +7,7 @@ class PhoneBook{
 private:
 	Contact contact[8];
 	int number;
+	void	viewContacts() const;
 
 public:
 	PhoneBook();
