@@ -1,6 +1,6 @@
 NAME = megaphone
 
-SRC = Contact.hpp Contact.cpp main.cpp PhoneBook.hpp
+SRC = Contact.hpp Contact.cpp main.cpp PhoneBook.hpp PhoneBook.cpp
 
 CC = c++
 
