@@ -1,6 +1,6 @@
-NAME = megaphone
+NAME = Account
 
-SRC = Account.hpp test.cpp Account.cpp
+SRC = Account.hpp tests.cpp Account.cpp
 
 CC = c++
 
