@@ -13,10 +13,20 @@ void PhoneBook::addContact(void) {
 
 	if (this->number == 8) {
 		this->contact[0].setData();
+		if (this->contact.isEmpty())
+		{
+			std::cout << "An empty string is not allowed\n";
+			this->contact = Contact();
+		}
 	}
 	else
 	{
 		this->contact[this->number + 1].setData();
+		if (this->contact.isEmpty())
+		{
+			std::cout << "An empty string is not allowed\n";
+			this->contact = Contact();
+		}
 	}
 }
 
@@ -106,3 +116,4 @@ void	PhoneBook::searchContact(void) const
 	viewContacts();
 	NumContact();
 }
+

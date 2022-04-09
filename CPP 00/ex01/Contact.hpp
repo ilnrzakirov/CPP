@@ -28,8 +28,9 @@ public:
 	void	setLastName(std::string word);
 	void	setNickName(std::string word);
 	void 	setData(void);
-	std::string getFirst_name();
-	std::string getLast_name();
+	bool 	isEmpty();
+	std::string getFirstName();
+	std::string getLastName();
 	std::string	getNickName();
 	std::string getDarkSecret();
 	std::string	getPhoneNumber();

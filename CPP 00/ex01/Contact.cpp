@@ -22,17 +22,17 @@ Contact::~Contact()
 {
 }
 
-std::string	Contact::getFirst_name()
+std::string	Contact::getFirstName()
 {
 	return this->first_name;
 }
 
-std::string	Contact::getLast_name()
+std::string	Contact::getLastName()
 {
 	return this->last_name;
 }
 
-std::string	Contact::getNickname()
+std::string	Contact::getNickName()
 {
 	return this->nickname;
 }
@@ -97,4 +97,23 @@ void		Contact::setData(void)
 	this->setDarkSercret(word);
 
 	std::cout << "\nThank you, new contact is created!\n";
+}
+
+bool 	Contact::isEmpty() {
+	if (this->getFirstName().empty()) {
+		return (true);
+	}
+	if (this->getDarkSecret().empty()){
+		return (true);
+	}
+	if (this->getLastName().empty()){
+		return (true);
+	}
+	if (this->getNickName().empty()){
+		return (true);
+	}
+	if (this>getPhoneNumber().empty()){
+		return (true)
+	}
+	return (false);
 }
