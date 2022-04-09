@@ -11,25 +11,26 @@ PhoneBook:: ~PhoneBook() //деструктор
 
 void PhoneBook::addContact(void) {
 
-	if (this->number == 8) {
+	if (this->number == 8 || this->number == 0) {
 		this->contact[0].setData();
 		if (this->contact[0].isEmpty())
 		{
 			std::cout << "An empty string is not allowed\n";
 			this->contact[0] = Contact();
+			this->number--;
 		}
-		this->number++;
 	}
 	else
 	{
-		this->contact[this->number + 1].setData();
-		if (this->contact[this->number + 1].isEmpty())
+		this->contact[this->number].setData();
+		if (this->contact[this->number].isEmpty())
 		{
 			std::cout << "An empty string is not allowed\n";
-			this->contact[this->number + 1] = Contact();
+			this->contact[this->number] = Contact();
+			this->number--;
 		}
-		this->number++;
 	}
+	this->number++;
 }
 
 void PhoneBook::viewContacts() const
@@ -86,11 +87,11 @@ void    PhoneBook::getMan()
 
 void	PhoneBook::viewFullInfo(Contact contact) const
 {
-	std::cout << "|" << "FirstName:       |" << contact.getFirstName() << "|\n";
-	std::cout << "|" << "LastName:        |" << contact.getLastName() << "|\n";
-	std::cout << "|" << "NickName:        |" << contact.getNickName() << "|\n";
-	std::cout << "|" << "Phone Number:    |" << contact.getPhoneNumber() << "|\n";
-	std::cout << "|" << "Darkest Secret:  |" << contact.getDarkSecret() << "|\n";
+	std::cout << "|" << "FirstName:       |" << std::setw(10) << contact.getFirstName() << "|\n";
+	std::cout << "|" << "LastName:        |" << std::setw(10) << contact.getLastName() << "|\n";
+	std::cout << "|" << "NickName:        |" << std::setw(10) << contact.getNickName() << "|\n";
+	std::cout << "|" << "Phone Number:    |" << std::setw(10) << contact.getPhoneNumber() << "|\n";
+	std::cout << "|" << "Darkest Secret:  |" << std::setw(10) << contact.getDarkSecret() << "|\n";
 }
 
 void	PhoneBook::NumContact(void) const
