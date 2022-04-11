@@ -1,5 +1,6 @@
 # CPP
- Dive into OOP
+Введение в ООП
 
 
-For detailed information, refer to the **[subject of CPP00](https://github.com/ilnrzakirov/CPP/blob/main/CPP%2000/en.subject.pdf)**
+Детальная информация о проекте **[CPP00](https://github.com/ilnrzakirov/CPP/blob/main/CPP%2000/en.subject.pdf)**
+<br>Детальная информация о проекте **[CPP01](https://github.com/ilnrzakirov/CPP/blob/main/CPP01/en.subject.pdf)**</br>
