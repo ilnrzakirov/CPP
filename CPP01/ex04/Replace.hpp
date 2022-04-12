@@ -2,6 +2,7 @@
 #define REPLACE_HPP
 
 # include <iostream>
+# include <fstream>
 
 class Replace {
 private:
@@ -15,4 +16,5 @@ public:
 	~Replace();
 	void replace(void );
 };
+
 #endif
