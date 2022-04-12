@@ -10,5 +10,5 @@ int main(void){
 			<< "stringPTR address: " << stringPTR << "\n"
 			<< "value string: " << string << "\n"
 			<< "value stringREF: " << stringREF << "\n"
-			<< "valeu stringPTR: " << *stringPTR << "\n";
+			<< "value stringPTR: " << *stringPTR << "\n";
 }
