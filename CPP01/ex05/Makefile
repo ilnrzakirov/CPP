@@ -1,6 +1,6 @@
 NAME = zombie
 
-SRC = main.cpp
+SRC = main.cpp Harl.cpp Harl.hpp
 
 CC = c++
 
