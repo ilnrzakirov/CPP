@@ -36,7 +36,7 @@ void Harl::complain(std::string level) {
 	void (Harl::*fptr[])(void) = {&Harl::debug, &Harl::info,&Harl::warning,&Harl::error};
 	int i;
 
-	i = getIndex(level);
+	i = Harl::getIndex(level);
 	switch (i) {
 		case (0):
 			(this->*fptr[0])();
@@ -45,7 +45,7 @@ void Harl::complain(std::string level) {
 		case (2):
 			(this->*fptr[2])();
 		case (3): {
-			(this->*fptr[0])();
+			(this->*fptr[3])();
 			break;
 		}
 		default:
