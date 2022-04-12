@@ -3,5 +3,16 @@
 
 # include <iostream>
 
+class Replace {
+private:
+	std::string filename;
+	std::string s1;
+	std::string s2;
+	void	check_s1(std::string &str);
 
+public:
+	Replace(std::string filename, std::string s1, std::string s2);
+	~Replace();
+	void replace(void );
+};
 #endif
