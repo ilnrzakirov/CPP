@@ -1,6 +1,6 @@
-NAME = zombie
+NAME = human
 
-SRC = main.cpp Weapon.cpp Weapon.hpp HumanA.cpp HumanA.hpp HumanB.pp HumanB.hpp
+SRC = main.cpp Weapon.cpp Weapon.hpp HumanA.cpp HumanA.hpp HumanB.cpp HumanB.hpp
 
 CC = c++
 

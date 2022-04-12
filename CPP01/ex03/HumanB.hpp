@@ -14,3 +14,5 @@ public:
 	void setWeapon (Weapon &weapon);
 	void attack();
 };
+
+#endif
