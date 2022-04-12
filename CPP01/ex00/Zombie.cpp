@@ -5,7 +5,7 @@ Zombie::Zombie(std::string name) {
 }
 
 Zombie::~Zombie() {
-	std::cout << this->_name << "the zombie has been eliminated\n";
+	std::cout << this->_name << " the zombie delete\n";
 }
 
 void Zombie::announce() {
