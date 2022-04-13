@@ -1,22 +1,23 @@
-NAME = zombie
+SRCS			= main.cpp Harl.cpp
+OBJS			= $(SRCS:.cpp=.o)
 
-SRC = main.cpp Harl.cpp Harl.hpp
+CPP				= c++
+RM				= rm -f
+FLAGS		= -Wall -Wextra -Werror
 
-CC = c++
+NAME			= harlFilter
 
-FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
+all:			$(NAME)
 
-all: $(NAME)
+$(NAME):		$(OBJS)
+				$(CPP) $(FLAGS) -o $(NAME) $(OBJS)
 
-$(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC)
-	
 clean:
-	rm -rf $(NAME)
+				$(RM) $(OBJS)
 
-fclean: clean
-	rm -rf $(NAME)
-	
-re: fclean all
+fclean:			clean
+				$(RM) $(NAME)
 
-.PHONY: all clean fclean re
+re:				fclean $(NAME)
+
+.PHONY:			all clean fclean re
