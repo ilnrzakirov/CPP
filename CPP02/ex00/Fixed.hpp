@@ -10,12 +10,12 @@ private:
 	static const int bits = 8;
 
 public:
-	Fixed(){
-		this->value = 0;
-	}
+	Fixed();
 	~Fixed();
 	Fixed(const Fixed &object);
 	Fixed &operator = (const Fixed &object);
 	int getRawBits( void ) const;
 	void setRaw( int const raw );
 };
+
+#endif

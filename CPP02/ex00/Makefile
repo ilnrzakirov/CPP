@@ -1,11 +1,12 @@
-SRCS			= main.cpp Fixed.hpp Fixed.cpp
+SRCS			= main.cpp Fixed.cpp
+
 OBJS			= $(SRCS:.cpp=.o)
 
 CPP				= c++
 RM				= rm -f
 FLAGS		= -Wall -Wextra -Werror
 
-NAME			= harlFilter
+NAME			= fixed
 
 all:			$(NAME)
 
