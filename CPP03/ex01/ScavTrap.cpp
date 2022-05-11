@@ -25,8 +25,8 @@ ScavTrap::~ScavTrap() {
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
 	this->setName(other.getName());
-	this->setHitpoints(other.getHitpoints());
-	this->setEnergyPoints(other.getEnergyPoints());
+	this->setHitpoints(other.getHp());
+	this->setEnergyPoints(other.getEnergy());
 	this->setAttackDamage(other.getAttackDamage());
 	std::cout <<"Copy assignment operator called\n";
 	return (*this);
