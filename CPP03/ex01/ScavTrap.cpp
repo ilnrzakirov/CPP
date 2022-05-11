@@ -36,3 +36,15 @@ ScavTrap::ScavTrap(const ScavTrap &other) {
 	std::cout << "Copy constructor is called\n";
 	*this = other;
 }
+
+void ScavTrap::guardGate() {
+	if (this->guard == 1){
+		this->guard = 0;
+		std::cout << this->getName() << " exited the Gate keeper mode.\n"
+	}
+	else if (this->guard == 0)
+	{
+		this->guard = 1;
+		std::cout << this->getName() << " the Gate keeper mode activated.\n"
+	}
+}
