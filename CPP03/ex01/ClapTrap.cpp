@@ -32,7 +32,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "Copy constructor is called\n";
+		std::cout << "Copy constructor is called\n";
 	*this = other;
 }
 
