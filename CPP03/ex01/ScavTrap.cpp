@@ -56,3 +56,16 @@ void ScavTrap::beRepaired(unsigned int amount) {
 		this->setHitpoints(this->getHp() + amount);
 	std::cout << "ScavTrap " << this->getName() << "repaired\n";
 }
+
+void ScavTrap::attack(const std::string &target) {
+	std::cout << "ScavTrap " << this->getName() << " attack " << target <<
+		", causing " << this->getAttackDamage() << " point of damage" << std::endl;
+}
+
+void ScavTrap::takeDamage(unsigned int amount) {
+	if (this->getHp()< amount)
+		this->setHitpoints(0);
+	else
+		this->setHitpoints(this->getHp() - amount);
+	std::cout << "ScavTrap " << this->getName() << " received damage\n";
+}
