@@ -4,7 +4,7 @@ SRC = main.cpp ClapTrap.cpp
 
 CC = c++
 
-FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
