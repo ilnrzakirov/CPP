@@ -48,3 +48,11 @@ void ScavTrap::guardGate() {
 		std::cout << this->getName() << " the Gate keeper mode activated.\n"
 	}
 }
+
+void ScavTrap::beRepaired(unsigned int amount) {
+	if (this->getHp() + amount > maxHitPoint)
+		this->setHitpoints(maxHitPoint);
+	else
+		this->setHitpoints(this->getHp() + amount);
+	std::cout << "ScavTrap " << this->getName() << "repaired\n";
+}

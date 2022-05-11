@@ -68,13 +68,11 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (this->hp < 10) {
-		if (this->hp + amount > 10)
-			this->hp = 10;
-		else
-			this->hp = this->hp + amount;
-		std::cout << this->name << " recovered\n";
-	}
+	if (this->hp + amount > 10)
+		this->hp = 10;
+	else
+		this->hp = this->hp + amount;
+	std::cout << this->name << " recovered\n";
 }
 
 void ClapTrap::setAttackDamage(unsigned int attackDamage) {
