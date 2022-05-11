@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::~ClapTrap() {
-	std::cout << "the destructor from" + this->name + "called\n";
+	std::cout << "the destructor from " + this->name + " called\n";
 }
 
 ClapTrap::ClapTrap(std::string name) {
@@ -54,19 +54,25 @@ std::string ClapTrap::getName() const {
 
 void ClapTrap::attack(const std::string &target) {
 	std::cout << "ClapTrap " + this->name + " attacks " + target +
-			", causing " <<  this->getAttackDamage() << "points of damage\n";
+			", causing " <<  this->getAttackDamage() << " points of damage\n";
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (this->hp < amount)
-		this->hp = 0;
-	else
-		this->hp = this->hp - amount;
+	if (this->hp > 0) {
+		if (this->hp < amount)
+			this->hp = 0;
+		else
+			this->hp = this->hp - amount;
+		std::cout << this->name << " received damage\n";
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (this->hp + amount > 10)
-		this->hp = 10;
-	else
-		this->hp = this->hp + amount;
+	if (this->hp < 10) {
+		if (this->hp + amount > 10)
+			this->hp = 10;
+		else
+			this->hp = this->hp + amount;
+		std::cout << this->name << " recovered\n";
+	}
 }
