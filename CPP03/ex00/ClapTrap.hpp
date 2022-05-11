@@ -21,4 +21,10 @@ public:
 	ClapTrap(ClapTrap const &other);
 	ClapTrap		&operator=(ClapTrap const &other);
 	void printInfo();
+	std::string getName() const;
+	unsigned int getHp() const;
+	unsigned int getEnergy() const;
+	unsigned int getAttackDamage() const;
 };
+
+#endif
