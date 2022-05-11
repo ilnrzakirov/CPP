@@ -5,7 +5,7 @@
 
 class ScavTrap : public virtual ClapTrap {
 private:
-	const int maxHitPoint;
+	static const int maxHitPoint = 100;
 	int guard;
 public:
 	void guardGate();

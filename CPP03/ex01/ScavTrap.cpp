@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() : ClapTrap() {
-	std::cout << "\"Standart ScavTrap constructor was called\n";
+	std::cout << "Standart ScavTrap constructor was called\n";
 	this->setName("None");
 	this->setHitpoints(100);
 	this->setEnergyPoints(50);
@@ -15,7 +15,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap() {
 	this->setAttackDamage(20);
 	this->setEnergyPoints(50);
 	this->setHitpoints(100);
-	this_>guard = 0;
+	this->guard = 0;
 }
 
 ScavTrap::~ScavTrap() {
@@ -40,12 +40,12 @@ ScavTrap::ScavTrap(const ScavTrap &other) {
 void ScavTrap::guardGate() {
 	if (this->guard == 1){
 		this->guard = 0;
-		std::cout << this->getName() << " exited the Gate keeper mode.\n"
+		std::cout << this->getName() << " exited the Gate keeper mode.\n";
 	}
 	else if (this->guard == 0)
 	{
 		this->guard = 1;
-		std::cout << this->getName() << " the Gate keeper mode activated.\n"
+		std::cout << this->getName() << " the Gate keeper mode activated.\n";
 	}
 }
 
