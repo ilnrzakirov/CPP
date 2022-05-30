@@ -53,8 +53,18 @@ std::string ClapTrap::getName() const {
 }
 
 void ClapTrap::attack(const std::string &target) {
-	std::cout << "ClapTrap " + this->name + " attacks " + target +
-			", causing " <<  this->getAttackDamage() << " points of damage\n";
+	if (this->getHp() < 1){
+		std::cout << this->getName() << " died.\n";
+		return;
+	}
+	if (this->getEnergy() > 0) {
+		std::cout << "ClapTrap " + this->name + " attacks " + target +
+					 ", causing " << this->getAttackDamage()
+				  << " points of damage\n";
+	}
+	else
+		std::cout << "There is no energy\n"
+
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
