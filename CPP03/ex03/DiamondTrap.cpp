@@ -23,6 +23,10 @@ DiamondTrap::DiamondTrap(const DiamondTrap &diamondTrap) {
 	*this = diamondTrap;
 }
 
+DiamondTrap::~DiamondTrap() {
+	std::cout << "the DiamondTrap destructor is called\n";
+}
+
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondTrap) {
 	std::cout <<"Copy assignment operator called\n";
 	this->name = diamondTrap.getName();
@@ -30,4 +34,15 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondTrap) {
 	this->energy = diamondTrap.getEnergy();
 	this->attackDamage = diamondTrap.getAttackDamage();
 	return  (*this);
+}
+
+void DiamondTrap::attack(const std::string &target) {
+	ScavTrap::attack(target);
+}
+
+void DiamondTrap::whoAmI() {
+	std::cout << "I am " << this->name << " clapTrap name : " <<
+	ClapTrap::name << " HP : " << this->getHp() << " Energy: " <<
+	this->getEnergy() << " attackDamage: " << this->getAttackDamage() <<
+	std::endl;
 }

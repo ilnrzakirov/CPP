@@ -1,25 +1,15 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void){
-	ClapTrap clap("Clap");
-	ClapTrap trap("Trap");
-	ScavTrap scav("scav");
-	FragTrap frag("frag");
+	DiamondTrap dima = DiamondTrap("dima");
+	ClapTrap clap = ClapTrap("Clap");
 
-	clap.attack(trap.getName());
-	frag.attack(clap.getName());
-	trap.takeDamage(clap.getAttackDamage());
-	trap.beRepaired(3);
-	trap.takeDamage(5);
-	trap.beRepaired(2);
-	scav.attack(clap.getName());
-	scav.takeDamage(3);
-	scav.beRepaired(3);
-	frag.takeDamage(trap.getAttackDamage());
-	frag.beRepaired(4);
-	trap.printInfo();
-	clap.printInfo();
-
+	dima.whoAmI();
+	dima.attack(clap.getName());
+	dima.takeDamage(10);
+	dima.beRepaired(10);
+	dima.whoAmI();
 }
