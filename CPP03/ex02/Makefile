@@ -5,6 +5,7 @@ OBJS_DIR	=	./objs/
 SRC			=	main.cpp	\
 				ClapTrap.cpp \
 				ScavTrap.cpp\
+				FragTrap.cpp
 
 CC			=	c++
 

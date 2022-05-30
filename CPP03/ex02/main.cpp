@@ -1,12 +1,15 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void){
 	ClapTrap clap("Clap");
 	ClapTrap trap("Trap");
-	ScavTrap scav("unit");
+	ScavTrap scav("scav");
+	FragTrap frag("frag");
 
 	clap.attack(trap.getName());
+	frag.attack(clap.getName());
 	trap.takeDamage(clap.getAttackDamage());
 	trap.beRepaired(3);
 	trap.takeDamage(5);
@@ -14,6 +17,8 @@ int main(void){
 	scav.attack(clap.getName());
 	scav.takeDamage(3);
 	scav.beRepaired(3);
+	frag.takeDamage(trap.getAttackDamage());
+	frag.beRepaired(4);
 	trap.printInfo();
 	clap.printInfo();
 

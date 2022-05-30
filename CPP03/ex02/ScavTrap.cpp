@@ -11,7 +11,6 @@ ScavTrap::ScavTrap() {
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "Constructor ScavTrap " << name << " was called\n";
-	this->setName(name);
 	this->setAttackDamage(20);
 	this->setEnergyPoints(50);
 	this->setHitpoints(100);
@@ -19,7 +18,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "Destructor ScavTrap " << this->getName() << " was callsed\n";
+	std::cout << "Destructor ScavTrap " << this->getName() << " was called\n";
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)

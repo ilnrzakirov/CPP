@@ -10,8 +10,7 @@ ClapTrap::ClapTrap(std::string name) {
 	this->hp = 10;
 	this->energy = 10;
 	this->attackDamage = 0;
-	std::cout << "the constructor is called\n";
-	printInfo();
+	std::cout << "the constructor ClapTrap is called\n";
 }
 
 void ClapTrap::printInfo() {
@@ -20,7 +19,7 @@ void ClapTrap::printInfo() {
 }
 
 ClapTrap::ClapTrap() {
-	std::cout << "the constructor is called\n";
+	std::cout << "the constructor ClapTrap is called\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
