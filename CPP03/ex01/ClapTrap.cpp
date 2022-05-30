@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::~ClapTrap() {
-	std::cout << "the destructor from " + this->name + " called\n";
+	std::cout << "the ClapTrap destructor from " + this->name + " called\n";
 }
 
 ClapTrap::ClapTrap(std::string name) {
@@ -53,8 +53,18 @@ std::string ClapTrap::getName() const {
 }
 
 void ClapTrap::attack(const std::string &target) {
-	std::cout << "ClapTrap " + this->name + " attacks " + target +
-			", causing " <<  this->getAttackDamage() << " points of damage\n";
+	if (this->getHp() < 1){
+		std::cout << this->getName() << " died.\n";
+		return;
+	}
+	if (this->getEnergy() > 0) {
+		std::cout << "ClapTrap " + this->name + " attacks " + target +
+					 ", causing " << this->getAttackDamage()
+				  << " points of damage\n";
+	}
+	else
+		std::cout << "There is no energy\n";
+
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -68,11 +78,17 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (this->hp + amount > 10)
-		this->hp = 10;
-	else
-		this->hp = this->hp + amount;
-	std::cout << this->name << " recovered\n";
+	if (this->getHp() < 1){
+		std::cout << this->getName() << " died.\n";
+		return;
+	}
+	if (this->hp < 10) {
+		if (this->hp + amount > 10)
+			this->hp = 10;
+		else
+			this->hp = this->hp + amount;
+		std::cout << this->name << " recovered\n";
+	}
 }
 
 void ClapTrap::setAttackDamage(unsigned int attackDamage) {

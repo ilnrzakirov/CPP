@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() {
+ScavTrap::ScavTrap() {
 	std::cout << "Standart ScavTrap constructor was called\n";
 	this->setName("None");
 	this->setHitpoints(100);
@@ -9,7 +9,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	this->guard = 0;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap() {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "Constructor ScavTrap " << name << " was called\n";
 	this->setName(name);
 	this->setAttackDamage(20);
@@ -49,23 +49,17 @@ void ScavTrap::guardGate() {
 	}
 }
 
-void ScavTrap::beRepaired(unsigned int amount) {
-	if (this->getHp() + amount > maxHitPoint)
-		this->setHitpoints(maxHitPoint);
-	else
-		this->setHitpoints(this->getHp() + amount);
-	std::cout << "ScavTrap " << this->getName() << "repaired\n";
-}
-
 void ScavTrap::attack(const std::string &target) {
-	std::cout << "ScavTrap " << this->getName() << " attack " << target <<
-		", causing " << this->getAttackDamage() << " point of damage" << std::endl;
-}
-
-void ScavTrap::takeDamage(unsigned int amount) {
-	if (this->getHp()< amount)
-		this->setHitpoints(0);
+	if (this->getHp() < 1){
+		std::cout << this->getName() << " died.\n";
+		return;
+	}
+	if (this->getEnergy() > 0) {
+		std::cout << "ScavTrap " + this->getName() + " attacks " + target +
+					 ", causing " << this->getAttackDamage()
+				  << " points of damage\n";
+	}
 	else
-		this->setHitpoints(this->getHp() - amount);
-	std::cout << "ScavTrap " << this->getName() << " received damage\n";
+		std::cout << "There is no energy\n";
+
 }

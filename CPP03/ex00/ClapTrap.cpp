@@ -63,7 +63,7 @@ void ClapTrap::attack(const std::string &target) {
 				  << " points of damage\n";
 	}
 	else
-		std::cout << "There is no energy\n"
+		std::cout << "There is no energy\n";
 
 }
 
@@ -78,6 +78,10 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
+	if (this->getHp() < 1){
+		std::cout << this->getName() << " died.\n";
+		return;
+	}
 	if (this->hp < 10) {
 		if (this->hp + amount > 10)
 			this->hp = 10;
