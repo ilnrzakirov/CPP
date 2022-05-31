@@ -2,6 +2,7 @@
 
 Animal::Animal() {
 	std::cout << "Animal constructor is called\n";
+	this->type = "Animal";
 }
 
 Animal &Animal::operator=(const Animal animal) {
@@ -19,10 +20,10 @@ Animal::~Animal() {
 	std::cout << "Animal destructor is called\n";
 }
 
-void Animal::makeSound() {
+void Animal::makeSound() const{
 	std::cout << "The animal makes a sound\n";
 }
 
-std::string Animal::getType() {
+std::string Animal::getType() const{
 	return this->type;
 }

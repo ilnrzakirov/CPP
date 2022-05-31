@@ -13,5 +13,6 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+	std::cout << meta->getType() << "\n";
 	return 0;
 }
