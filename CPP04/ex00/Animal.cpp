@@ -7,7 +7,7 @@ Animal::Animal() {
 Animal &Animal::operator=(const Animal animal) {
 	std::cout << "Copy assignment operator called\n";
 	this->type = animal.type;
-	return (*this)
+	return (*this);
 }
 
 Animal::Animal(const Animal &animal) {
@@ -19,6 +19,6 @@ Animal::~Animal() {
 	std::cout << "Animal destructor is called\n";
 }
 
-virtual void Animal::makeSound() {
+void Animal::makeSound() {
 	std::cout << "The animal makes a sound\n";
 }
