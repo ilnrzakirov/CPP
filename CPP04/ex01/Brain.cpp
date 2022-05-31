@@ -20,11 +20,12 @@ Brain::~Brain() {
 
 Brain &Brain::operator=(const Brain brain) {
 	std::cout << "Brain copy assignment operator called\n";
-	if (*this != &brain){
+	if (this != &brain){
 		for (int i=0; i < 100; i++){
 			this->ideas[i] = brain.ideas[i];
 		}
 	}
+	return (*this);
 }
 
 Brain::Brain(Brain &brain) {
@@ -32,7 +33,7 @@ Brain::Brain(Brain &brain) {
 	*this = brain;
 }
 
-void Brain::setIdea(int idea) {
+void Brain::setIdea(std::string idea) {
 	if (this->index == 100){
 		this->index = 0;
 	}

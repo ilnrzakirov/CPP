@@ -17,7 +17,7 @@ Cat::Cat(const Cat &cat) {
 }
 
 Cat &Cat::operator=(const Cat cat) {
-	if (*this != &cat){
+	if (this != &cat){
 		this->type = cat.type;
 		if (cat.brain) {
 			delete this->brain;
