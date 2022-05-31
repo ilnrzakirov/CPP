@@ -2,6 +2,7 @@
 # define ANIMAL_HPP
 #include <iomanip>
 #include <iostream>
+#include <string>
 
 class Animal {
 protected:

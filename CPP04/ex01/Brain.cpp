@@ -2,7 +2,9 @@
 
 void Brain::showIdeas(){
 	for (int i = 0; i < 100; i++){
-		std::cout << this->ideas[i] << "\n";
+		if (this->ideas[i].size() != 0) {
+			std::cout << this->ideas[i] << "\n";
+		}
 	}
 }
 
