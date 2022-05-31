@@ -5,9 +5,11 @@ OBJS_DIR	=	./objs/
 SRC			=	main.cpp	\
 				Animal.cpp \
 				Cat.cpp\
-				Dog.cpp
+				Dog.cpp\
+				Brain.cpp\
 
-HEADERS		= Animal.hpp Cat.hpp Dog.hpp
+
+HEADERS		= Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 CC			=	c++
 

@@ -14,5 +14,8 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 	std::cout << meta->getType() << "\n";
+	delete meta;
+	delete j;
+	delete i;
 	return 0;
 }
