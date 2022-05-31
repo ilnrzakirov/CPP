@@ -7,9 +7,11 @@ SRC			=	main.cpp	\
 				Cat.cpp\
 				Dog.cpp\
 				Brain.cpp\
+				WrongAnimal.cpp\
+				WrongCat.cpp
 
 
-HEADERS		= Animal.hpp Cat.hpp Dog.hpp Brain.hpp
+HEADERS		= Animal.hpp Cat.hpp Dog.hpp Brain.hpp WrongAnimal.hpp WrongCat.hpp
 
 CC			=	c++
 

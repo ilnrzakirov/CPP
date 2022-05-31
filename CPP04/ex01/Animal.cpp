@@ -27,3 +27,9 @@ void Animal::makeSound() const{
 std::string Animal::getType() const{
 	return this->type;
 }
+
+void Animal::showIdeas() {
+}
+
+void Animal::setIdeas(std::string idea) {
+}
