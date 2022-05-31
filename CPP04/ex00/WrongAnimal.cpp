@@ -1,7 +1,7 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal( void ) {
-	std::cout << "Default WrongAnimal constructor called" << std::endl;
+	std::cout << "WrongAnimal constructor called" << std::endl;
 	type = "Wrong Animal";
 }
 
@@ -24,5 +24,5 @@ WrongAnimal & WrongAnimal::operator=( WrongAnimal const & rhs ) {
 }
 
 void WrongAnimal::makeSound( void ) const {
-	std::cout << "Wrong animal makes sound" << std::endl;
+	std::cout << "WrongAnimal makes sound" << std::endl;
 }

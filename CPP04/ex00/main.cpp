@@ -20,7 +20,7 @@ int main()
 	delete j;
 	delete i;
 	WrongAnimal *animal = new WrongAnimal();
-	WrongCat *cat = new WrongCat();
+	WrongAnimal *cat = new WrongCat();
 	std::cout << animal->getType() << " " << std::endl;
 	std::cout << cat->getType() << " " << std::endl;
 	animal->makeSound();

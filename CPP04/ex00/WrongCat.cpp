@@ -1,7 +1,7 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat( void ) {
-	std::cout << "Default WrongCat constructor called\n";
+	std::cout << "WrongCat constructor called\n";
 	type = "WrongCat";
 }
 
@@ -22,5 +22,5 @@ WrongCat & WrongCat::operator=( WrongCat const & rhs ) {
 }
 
 void WrongCat::makeSound( void ) const{
-	std::cout << "The cat purrs\n";
+	std::cout << "The WrongCat purrs\n";
 }
