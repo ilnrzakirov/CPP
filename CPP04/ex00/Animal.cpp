@@ -22,3 +22,7 @@ Animal::~Animal() {
 void Animal::makeSound() {
 	std::cout << "The animal makes a sound\n";
 }
+
+std::string Animal::getType() {
+	return this->type;
+}
