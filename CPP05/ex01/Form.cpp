@@ -21,6 +21,13 @@ Form::Form(std::string name, int grade_to_sign, int grade_to_execute) {
 Form::Form(const Form &form) : name(form.name), is_sign(form.is_sign),
 grade_to_execute(form.grade_to_execute), grade_to_sign(form.grade_to_sign) {}
 
+std::ostream &operator << (std::ostream &os, const Form &form) {
+	return os << "Form name: " << form.getName()
+			  << "\nForm signed: " << form.getSigned()
+			  << "\nMin grade to sign: " << form.getGradeToSign()
+			  << "\nMin grade to execute: " << form.getGradeToExecute();
+}
+
 Form &Form::operator=(const Form form) {
 	this->name = form.name;
 	this->grade_to_sign = form.grade_to_sign;
@@ -29,9 +36,11 @@ Form &Form::operator=(const Form form) {
 	return (*this);
 }
 
-std::ostream &operator << (std::ostream &os, const Form &form) {
-	return os << "Form name: " << form.getName()
-			  << "\nForm signed: " << form.getSigned()
-			  << "\nMin grade to sign: " << form.getGradeToSign()
-			  << "\nMin grade to execute: " << form.getGradeToExecute();
+int Form::getGradeToExecute() {
+	return this->grade_to_execute;
 }
+
+int Form::getGradeToSign() {
+	return this->grade_to_sign;
+}
+
