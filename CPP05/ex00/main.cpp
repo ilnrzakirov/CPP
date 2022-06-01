@@ -10,5 +10,10 @@ int main(void){
 	catch (std::exception &e) {
 		std::cout <<"Error: "  << e.what() << "\n";
 	}
+	try{
+		Bureaucrat newBur = Bureaucrat("BBB", 155);
+	} catch (std::exception &e) {
+		std::cout <<"Error: "  << e.what() << "\n";
+	}
 	return (0);
 }

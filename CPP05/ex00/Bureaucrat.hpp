@@ -25,13 +25,13 @@ public:
 	void increment();
 	void decrement();
 
-	class GradeTooHighException : std::runtime_error {
-	public: GradeTooHighException(std::string error) : std::runtime_error
+	class GradeTooHighException : public std::runtime_error {
+	public: GradeTooHighException(const std::string &error) : std::runtime_error
 	(error) {};
 	};
 
-	class GradeTooLowException : std::runtime_error {
-	public: GradeTooLowException(std::string error) : std::runtime_error
+	class GradeTooLowException : public std::runtime_error {
+	public: GradeTooLowException(const std::string &error) : std::runtime_error
 	(error) {};
 	};
 };
