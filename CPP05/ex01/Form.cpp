@@ -25,7 +25,8 @@ std::ostream &operator << (std::ostream &os, const Form &form) {
 	return os << "Form name: " << form.getName()
 			  << "\nForm signed: " << form.getSigned()
 			  << "\nMin grade to sign: " << form.getGradeToSign()
-			  << "\nMin grade to execute: " << form.getGradeToExecute();
+			  << "\nMin grade to execute: " << form.getGradeToExecute()
+			  << "\n";
 }
 
 Form &Form::operator=(const Form form) {
@@ -56,6 +57,12 @@ std::string Form::getName() const{
 	return this->name;
 }
 
-bool Form::getSigned() const {
-	return this->is_sign;
+std::string Form::getSigned() const {
+	if (this->is_sign)
+		return ("Yes");
+	return ("No");
+}
+
+Form::~Form() {
+	std::cout << "Default destructor is called\n";
 }

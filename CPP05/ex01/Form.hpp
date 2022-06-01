@@ -34,7 +34,7 @@ public:
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	std::string getName() const;
-	bool getSigned() const;
+	std::string getSigned() const;
 };
 std::ostream &operator<< (std::ostream &os, const Form &form);
 
