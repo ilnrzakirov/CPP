@@ -56,4 +56,10 @@ void Bureaucrat::decrement() {
 	}
 }
 
+std::iostream *operator << (std::iostream &iostream, const Bureaucrat
+&bureaucrat) {
+	return iostream << bureaucrat.getName() << ", garde: " << bureaucrat
+	.getGrade() << "\n";
+}
+
 #endif
