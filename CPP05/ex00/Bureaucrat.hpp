@@ -34,7 +34,5 @@ public:
 	public: GradeTooLowException(std::string error) : std::runtime_error(error);
 	};
 };
-
-
-
+std::ostream &operator << (std::ostream &os, const Bureaucrat &bureaucrat);
 #endif
