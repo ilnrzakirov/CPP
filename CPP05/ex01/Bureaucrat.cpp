@@ -61,3 +61,7 @@ std::ostream &operator << (std::ostream &os, const Bureaucrat &bureaucrat) {
 			  << bureaucrat.getGrade() << ".";
 }
 
+void Bureaucrat::signForm(Form &form) {
+
+}
+

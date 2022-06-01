@@ -31,6 +31,8 @@ public:
 	Form(const Form &form);
 	Form &operator=(const Form form);
 	void beSigned(Bureaucrat &bureaucrat);
+	int getGradeToSign();
+	int getGradeToExecute();
 };
 std::ostream &operator<< (std::ostream &os, const Form &form);
 
