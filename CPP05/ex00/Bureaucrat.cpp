@@ -11,7 +11,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) {
 	std::cout << "Bureaucrat constructor from " << name << " is called\n";
 	this->name = name;
 	if (grade < 1){
-		throw Bureaucrat::GradeTooHighException("The grade is too high");
+		throw Bureaucrat::GradeTooHighException("The grade is too high\n");
 	} else if (grade > 150) {
 		throw  Bureaucrat::GradeTooLowException("The grade is to low\n");
 	} else {
@@ -30,6 +30,30 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat bureaucrat) {
 	this->name = bureaucrat.getName();
 	this->grade = bureaucrat.getGrade();
 	return (*this);
+}
+
+int Bureaucrat::getGrade() const {
+	return this->grade;
+}
+
+std::string Bureaucrat::getName() const {
+	return this->name;
+}
+
+void Bureaucrat::increment() {
+	if (this->grade > 1){
+		this->grade--;
+	} else {
+		throw Bureaucrat::GradeTooHighException("The grade is too high\n");
+	}
+}
+
+void Bureaucrat::decrement() {
+	if (this->grade < 150){
+		this->grade++;
+	} else {
+		throw Bureaucrat::GradeTooLowException("The grade is to low\n");
+	}
 }
 
 #endif
