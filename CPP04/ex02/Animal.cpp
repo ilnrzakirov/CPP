@@ -1,0 +1,31 @@
+#include "Animal.hpp"
+
+Animal::Animal() {
+	std::cout << "Animal constructor is called\n";
+	this->type = "Animal";
+}
+
+//Animal &Animal::operator=(const Animal animal) {
+//	std::cout << "Copy assignment operator called\n";
+//	this->type = animal.type;
+//	return (*this);
+//}
+
+Animal::Animal(const Animal &animal) {
+	std::cout << "Copy constructor is called\n";
+	*this = animal;
+}
+
+Animal::~Animal() {
+	std::cout << "Animal destructor is called\n";
+}
+
+std::string Animal::getType() const{
+	return this->type;
+}
+
+void Animal::showIdeas() {
+}
+
+void Animal::setIdeas(std::string idea) {
+}

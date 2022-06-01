@@ -30,5 +30,6 @@ int main()
 	animals[9]->showIdeas();
 	for (int i = 0; i < 9; i++)
 		delete animals[i];
+//	Animal animal = new Animal();
 	return 0;
 }
