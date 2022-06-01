@@ -33,6 +33,7 @@ public:
 	void beSigned(Bureaucrat &bureaucrat);
 	int getGradeToSign();
 	int getGradeToExecute();
+	std::string getName();
 };
 std::ostream &operator<< (std::ostream &os, const Form &form);
 

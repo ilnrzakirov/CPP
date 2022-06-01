@@ -51,3 +51,7 @@ void Form::beSigned(Bureaucrat &bureaucrat) {
 		throw GradeTooLowException("The grade is too low for signing\n");
 	}
 }
+
+std::string Form::getName() {
+	return this->name;
+}
