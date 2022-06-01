@@ -11,9 +11,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) {
 	std::cout << "Bureaucrat constructor from " << name << " is called\n";
 	this->name = name;
 	if (grade < 1){
-		throw Bureaucrat::GradeTooHighException("The grade is too high\n");
+		throw Bureaucrat::GradeTooHighException("The grade is too high");
 	} else if (grade > 150) {
-		throw  Bureaucrat::GradeTooLowException("The grade is to low\n");
+		throw  Bureaucrat::GradeTooLowException("The grade is to low");
 	} else {
 		this->grade = grade;
 	}
@@ -56,10 +56,8 @@ void Bureaucrat::decrement() {
 	}
 }
 
-std::iostream *operator << (std::iostream &iostream, const Bureaucrat
-&bureaucrat) {
-	return iostream << bureaucrat.getName() << ", garde: " << bureaucrat
-	.getGrade() << "\n";
+std::ostream &operator << (std::ostream &os, const Bureaucrat &bureaucrat) {
+	return os << bureaucrat.getName() << ", bureaucrat grade "
+			  << bureaucrat.getGrade() << ".";
 }
 
-#endif

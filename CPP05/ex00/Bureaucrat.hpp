@@ -17,22 +17,24 @@ private:
 public:
 	Bureaucrat();
 	Bureaucrat(std::string name, int grade);
-	~Bureaucrat()
+	~Bureaucrat();
 	Bureaucrat(const Bureaucrat &bureaucrat);
-	Bureaucrat &Bureaucrat::operator=(const Bureaucrat bureaucrat);
+	Bureaucrat &operator=(const Bureaucrat bureaucrat);
 	std::string getName() const;
 	int getGrade() const;
 	void increment();
 	void decrement();
 
-	class GradeTooHighException : std::exception {
+	class GradeTooHighException : std::runtime_error {
 	public: GradeTooHighException(std::string error) : std::runtime_error
-	(error);
+	(error) {};
 	};
 
-	class GradeTooLowException : std::exception {
-	public: GradeTooLowException(std::string error) : std::runtime_error(error);
+	class GradeTooLowException : std::runtime_error {
+	public: GradeTooLowException(std::string error) : std::runtime_error
+	(error) {};
 	};
 };
-std::ostream &operator << (std::ostream &os, const Bureaucrat &bureaucrat);
+std::ostream &operator<< (std::ostream &os, const Bureaucrat &bureaucrat);
+
 #endif
