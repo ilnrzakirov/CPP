@@ -19,5 +19,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade) {
 	}
 }
 
+Bureaucrat::~Bureaucrat() {
+	std::cout << "Default bureaucrat destructor is called\n";
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) : name(bureaucrat.name),
+grade(bureaucrat.grade) {}
+
+
 
 #endif
