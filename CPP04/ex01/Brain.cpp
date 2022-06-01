@@ -1,10 +1,15 @@
 #include "Brain.hpp"
 
 void Brain::showIdeas(){
+	int flag = 0;
 	for (int i = 0; i < 100; i++){
 		if (this->ideas[i].size() != 0) {
 			std::cout << this->ideas[i] << "\n";
+			flag = 1;
 		}
+	}
+	if (flag == 0){
+		std::cout << "no ideas\n";
 	}
 }
 

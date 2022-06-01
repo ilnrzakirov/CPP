@@ -17,6 +17,14 @@ int main()
 	animals[0]->setIdeas("Hello");
 	animals[0]->setIdeas("World");
 	animals[0]->setIdeas("mmmmm");
+	std::cout << animals[0]->getType() << "\n";
 	animals[0]->showIdeas();
+	std::cout << "before copying\n";
+	std::cout << animals[7]->getType() << "\n";
+	animals[7]->showIdeas();
+	std::cout << "after copying\n";
+	animals[7] = animals[0];
+	std::cout << animals[7]->getType() << "\n";
+	animals[7]->showIdeas();
 	return 0;
 }
