@@ -13,7 +13,7 @@ Form::Form(std::string name, int grade_to_sign, int grade_to_execute) {
 	if (grade_to_sign < 1 || grade_to_execute < 1)
 		throw GradeTooHighException("The grade is too high for signing\n");
 	if (grade_to_sign > 150 || grade_to_execute > 150)
-		throw GradeTooLowException("The grade is too low for signing\\n\"");
+		throw GradeTooLowException("The grade is too low for signing\n");
 	this->grade_to_sign = grade_to_sign;
 	this->grade_to_execute = grade_to_execute;
 }
@@ -44,3 +44,10 @@ int Form::getGradeToSign() {
 	return this->grade_to_sign;
 }
 
+void Form::beSigned(Bureaucrat &bureaucrat) {
+	if (this->grade_to_sign > bureaucrat.getGrade())
+		this->is_sign = true;
+	else {
+		throw GradeTooLowException("The grade is too low for signing\n");
+	}
+}
