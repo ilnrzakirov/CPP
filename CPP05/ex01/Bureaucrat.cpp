@@ -1,6 +1,5 @@
 #include "Bureaucrat.hpp"
 
-
 Bureaucrat::Bureaucrat() {
 	std::cout << "Default bureaucrat constructor is called\n";
 	this->name = "None";

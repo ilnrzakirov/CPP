@@ -3,10 +3,11 @@ NAME		=	Bureaucrat
 OBJS_DIR	=	./objs/
 
 SRC			=	main.cpp	\
-				Bureaucrat.cpp
+				Bureaucrat.cpp\
+				Form.cpp
 
 
-HEADERS		= Bureaucrat.hpp
+HEADERS		= Bureaucrat.hpp Form.hpp
 
 CC			=	c++
 

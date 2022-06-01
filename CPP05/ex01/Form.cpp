@@ -36,11 +36,11 @@ Form &Form::operator=(const Form form) {
 	return (*this);
 }
 
-int Form::getGradeToExecute() {
+int Form::getGradeToExecute() const {
 	return this->grade_to_execute;
 }
 
-int Form::getGradeToSign() {
+int Form::getGradeToSign() const {
 	return this->grade_to_sign;
 }
 
@@ -52,6 +52,10 @@ void Form::beSigned(Bureaucrat &bureaucrat) {
 	}
 }
 
-std::string Form::getName() {
+std::string Form::getName() const{
 	return this->name;
+}
+
+bool Form::getSigned() const {
+	return this->is_sign;
 }
