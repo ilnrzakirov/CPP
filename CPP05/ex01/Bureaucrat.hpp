@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Form.hpp"
 
 
 class Bureaucrat {
@@ -24,6 +25,7 @@ public:
 	int getGrade() const;
 	void increment();
 	void decrement();
+	void signForm(Form &form);
 
 	class GradeTooHighException : public std::runtime_error {
 	public: GradeTooHighException(const std::string &error) : std::runtime_error
