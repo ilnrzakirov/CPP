@@ -35,6 +35,7 @@ public:
 	int getGradeToExecute() const;
 	std::string getName() const;
 	std::string getSigned() const;
+	virtual void execute(Bureaucrat const & executor) const;
 };
 std::ostream &operator<< (std::ostream &os, const Form &form);
 

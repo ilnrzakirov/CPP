@@ -66,3 +66,5 @@ std::string Form::getSigned() const {
 Form::~Form() {
 	std::cout << "Default destructor is called\n";
 }
+
+void Form::execute(const Bureaucrat &executor) const {}
