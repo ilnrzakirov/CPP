@@ -16,5 +16,6 @@ int main(void){
 	scav.beRepaired(3);
 	trap.printInfo();
 	clap.printInfo();
+	scav.printInfo();
 
 }

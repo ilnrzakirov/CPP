@@ -18,5 +18,13 @@ PresidentialPardonForm::PresidentialPardonForm(
 		.target) {}
 
 void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
-
+	if (this->getSigned().size() == 2){
+		std::cout << "The form is not signed\n";
+		return;
+	} else if (executor.getGrade() <= this->getGradeToExecute()){
+		std::cout << executor.getName() << " executed " << this->getName() <<
+		std::endl;
+	} else {
+		std:: cout << "The grade of bureaucrat is low to complete the form\n";
+	}
 }

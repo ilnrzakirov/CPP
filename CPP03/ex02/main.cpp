@@ -21,5 +21,6 @@ int main(void){
 	frag.beRepaired(4);
 	trap.printInfo();
 	clap.printInfo();
+	frag.printInfo();
 
 }

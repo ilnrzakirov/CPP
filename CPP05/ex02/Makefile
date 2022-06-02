@@ -4,10 +4,13 @@ OBJS_DIR	=	./objs/
 
 SRC			=	main.cpp	\
 				Bureaucrat.cpp\
-				Form.cpp
+				Form.cpp\
+				PresidentialPardonForm.cpp\
+				RobotomyRequestForm.cpp\
+				ShrubberyCreationForm.cpp
 
 
-HEADERS		= Bureaucrat.hpp Form.hpp
+HEADERS		= Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
 
 CC			=	c++
 

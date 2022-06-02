@@ -28,14 +28,14 @@ public:
 	Form();
 	Form(std::string name, int grade_to_sign, int grade_to_execute );
 	~Form();
-	Form(const Form &form);
-	Form &operator=(const Form form);
+//	Form(const Form &form);
+//	Form &operator=(const Form form);
 	void beSigned(Bureaucrat &bureaucrat);
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	std::string getName() const;
 	std::string getSigned() const;
-	virtual void execute(Bureaucrat const & executor) const;
+	virtual void execute(Bureaucrat const & executor) const = 0;
 };
 std::ostream &operator<< (std::ostream &os, const Form &form);
 
