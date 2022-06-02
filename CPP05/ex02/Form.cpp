@@ -18,25 +18,6 @@ Form::Form(std::string name, int grade_to_sign, int grade_to_execute) {
 	this->grade_to_execute = grade_to_execute;
 }
 
-//Form::Form(const Form &form) : name(form.name), is_sign(form.is_sign),
-//grade_to_execute(form.grade_to_execute), grade_to_sign(form.grade_to_sign) {}
-
-//std::ostream &operator << (std::ostream &os, const Form &form) {
-//	return os << "Form name: " << form.getName()
-//			  << "\nForm signed: " << form.getSigned()
-//			  << "\nMin grade to sign: " << form.getGradeToSign()
-//			  << "\nMin grade to execute: " << form.getGradeToExecute()
-//			  << "\n";
-//}
-
-//Form &Form::operator=(const Form form) {
-//	this->name = form.name;
-//	this->grade_to_sign = form.grade_to_sign;
-//	this->grade_to_execute = form.grade_to_execute;
-//	this->is_sign = form.is_sign;
-//	return (*this);
-//}
-
 int Form::getGradeToExecute() const {
 	return this->grade_to_execute;
 }
@@ -46,8 +27,10 @@ int Form::getGradeToSign() const {
 }
 
 void Form::beSigned(Bureaucrat &bureaucrat) {
-	if (this->grade_to_sign > bureaucrat.getGrade())
+	if (this->grade_to_sign > bureaucrat.getGrade()) {
+		std::cout << "Form is signed\n";
 		this->is_sign = true;
+	}
 	else {
 		throw GradeTooLowException("The grade is too low for signing\n");
 	}
