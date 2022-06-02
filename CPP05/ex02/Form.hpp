@@ -25,6 +25,12 @@ public:
 	public: GradeTooLowException(const std::string &error) : std::runtime_error
 																	 (error) {};
 	};
+
+	class NotSignException : public std::runtime_error {
+	public: NotSignException(const std::string &error) : std::runtime_error
+																 (error) {};
+	};
+
 	Form();
 	Form(std::string name, int grade_to_sign, int grade_to_execute );
 	~Form();

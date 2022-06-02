@@ -32,8 +32,7 @@ RobotomyRequestForm::operator=(const RobotomyRequestForm robotomyRequestForm)
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 	if (this->getSigned().size() == 2){
-		std::cout << "The form is not signed\n";
-		return;
+		throw NotSignException("The form is not signed\n");
 	} else if (executor.getGrade() <= this->getGradeToExecute()){
 		std::cout << "drilling noises... ";
 		std::srand(time(0));
@@ -45,6 +44,6 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 			std::cout << "The robotomy failed.\n";
 		}
 	} else {
-		std:: cout << "The grade of bureaucrat is low to complete the form\n";
+		throw GradeTooLowException("The grade is too low for signing\n");
 	}
 }

@@ -3,6 +3,7 @@
 //
 
 #include "ShrubberyCreationForm.hpp"
+#include "fstream"
 
 #define ASCII_TREE \
 "          &&& &&  & &&\n"\
@@ -44,20 +45,26 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 	if (this->getSigned().size() == 2) {
-		std::cout << "The form is not signed\n";
-		return;
+		throw NotSignException("The form is not signed\n");
 	} else if (executor.getGrade() <= this->getGradeToExecute()) {
 		try {
-			std::ofstream out;
-			out.open(this->target + "_shrubbery");
-			if (out.is_open())
+			std::ofstream out(this->target + "_shrubbery");
+			if (out.is_open()) {
 				out << ASCII_TREE;
+				std::cout << "The form is completed\n";
+			}
 			else {
 				std::cout << "File not open\n";
 			}
 		} catch (std::exception &e){
 			std::cout << "File not open\n";
 		}
+	} else {
+		throw GradeTooLowException("The grade is too low for signing\n");
 	}
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm() {
+	std::cout << "ShrubberyCreationForm destructor is called\n";
 }
 

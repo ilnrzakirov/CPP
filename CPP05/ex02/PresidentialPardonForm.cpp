@@ -23,12 +23,11 @@ PresidentialPardonForm::PresidentialPardonForm(
 
 void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
 	if (this->getSigned().size() == 2){
-		std::cout << "The form is not signed\n";
-		return;
+		throw NotSignException("The form is not signed\n");
 	} else if (executor.getGrade() <= this->getGradeToExecute()){
 		std::cout << this->target << " has been pardoned by Zaphod "
 									 "Beeblebrox\n";
 	} else {
-		std:: cout << "The grade of bureaucrat is low to complete the form\n";
+		throw GradeTooLowException("The grade is too low for signing\n");
 	}
 }
