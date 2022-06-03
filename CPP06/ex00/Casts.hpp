@@ -25,7 +25,7 @@ public:
 	Casts &operator=(const Casts casts);
 	std::string getInputString() const;
 	void getType();
-	void castsIntForDouble();
+	void castsIntToChar();
 	void castsChar();
 	void adapter();
 
