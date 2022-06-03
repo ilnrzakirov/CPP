@@ -8,6 +8,7 @@
 #include "iostream"
 #include "string"
 #include "iomanip"
+#include <stdlib.h>
 
 class Casts {
 private:
@@ -32,6 +33,7 @@ public:
 	void charCase();
 	void intCase();
 	void floatCase();
+	void doubleCase();
 
 	char getChar() const;
 	std::string getTypeInputString() const;

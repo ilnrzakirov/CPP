@@ -8,8 +8,7 @@ int main(int ac, char **av){
 	try {
 		std::string inputString(av[1]);
 		Casts casts = Casts(inputString);
-		std::cout << casts.getTypeInputString() << "\n";
-		std::cout << casts.getInputString() << "\n";
+		casts.cast();
 	} catch (std::exception &e) {
 		std::cout << e.what();
 	}
