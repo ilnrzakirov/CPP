@@ -27,12 +27,14 @@ public:
 	void getType();
 	void castsIntForDouble();
 	void castsChar();
+	void adapter();
 
 	char getChar() const;
 	std::string getTypeInputString() const;
 	int getInt() const;
 	float getFloat() const;
 	double getDouble() const;
+	void setNumber(std::string setNum);
 
 	class DataException : public std::runtime_error {
 	public: DataException(const std::string &error) : std::runtime_error

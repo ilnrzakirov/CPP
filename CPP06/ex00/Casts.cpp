@@ -10,6 +10,7 @@ _float(0.0F), _int(0) {}
 Casts::Casts(std::string inputString): inputString(inputString),
 typeInputString(""), _char(0), _double(0.0), _float(0.0F), _int(0) {
 	this->getType();
+	adapter();
 }
 
 Casts::~Casts() {}
@@ -50,7 +51,6 @@ Casts &Casts::operator=(const Casts casts) {
 	this->_char = casts.getChar();
 	return (*this);
 }
-
 
 void Casts::getType() {
 	if (this->inputString.compare("-inf") == 0 || this->inputString.compare
@@ -103,5 +103,28 @@ void Casts::getType() {
 			}
 		}
 		throw DataException("Incorrect data\n");
+	}
+}
+
+void Casts::setNumber(std::string setNum) {
+	this->inputString = setNum;
+}
+
+void Casts::adapter() {
+	if (this->typeInputString.compare("float") == 0 || this->typeInputString
+	.compare("double") == 0){
+		if (this->inputString[0] == '.'){
+			this->setNumber("0" + this->inputString);
+		}
+		if (this->inputString[this->inputString.size() - 1] == '.'){
+			this->setNumber(this->inputString + "0");
+		}
+		if (this->inputString[this->inputString.size() - 1] == 'f'){
+			if (this->inputString[this->inputString.size() - 2] == '.'){
+				std::string result = this->inputString;
+				result[result.size() - 1] = '0';
+				this->setNumber(result + "f");
+			}
+		}
 	}
 }
