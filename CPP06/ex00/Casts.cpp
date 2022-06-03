@@ -130,6 +130,7 @@ void Casts::adapter() {
 }
 
 void Casts::castsIntToChar() {
+	std::cout << "char: "
 	if (this->_int >= 0 && this->_int <= 127){
 		if (this->_int >= 32 && this->_int < 127){
 			std::cout << static_cast<char>(this->_int);
@@ -152,8 +153,32 @@ void Casts::charCase() {
 	std::cout << "double: " << this->_double << ".0\n";
 }
 
+void Casts::intCase() {
+	this->_int = static_cast<int>(this->inputString);
+	castsIntToChar();
+	std::cout << "int: " << this->_int << "\n";
+	this->_float = static_cast<float>(this->_int);
+	std::cout << "float: " << this->_float << ".0f\n";
+	this->_double = static_cast<double>(this->_int);
+	std::cout << "double: " << this->_double << ".0\n";
+}
+
+void Casts::floatCase() {
+	this->_float = static_cast<float>(this->inputString);
+	this->_int = static_cast<int>(this->inputString);
+	castsIntToChar();
+	std::cout << "int: " << this->_int << "\n";
+	std::cout << "float: " << this->_float << "\n";
+	this->_double = static_cast<double>(this->_float);
+	std::cout << "double: " << this->_double << "\n";
+}
+
 void Casts::cast() {
 	if (this->typeInputString.compare("char") == 0){
 		this->charCase();
+	} else if (this->typeInputString.compare("int") == 0){
+		this->intCase();
+	} else if (this->typeInputString.compare("float") == 0) {
+		this->floatCase();
 	}
 }

@@ -30,6 +30,8 @@ public:
 	void adapter();
 	void cast();
 	void charCase();
+	void intCase();
+	void floatCase();
 
 	char getChar() const;
 	std::string getTypeInputString() const;
