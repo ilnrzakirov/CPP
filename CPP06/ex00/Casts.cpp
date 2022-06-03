@@ -86,14 +86,15 @@ void Casts::getType() {
 			}
 			i++;
 		}
-		if (isNumber && sign == 1){
+		if (isNumber && (sign == 1 || sign == 0)){
 			if (isdigit(this->inputString[i]) != 0 && countDot == 1){
 				this->typeInputString = "double";
 				return;
 			} else if (isdigit(this->inputString[i]) != 0 && countDot == 0){
 				this->typeInputString = "int";
 				return;
-			} else if (this->inputString[this->inputString.size() - 1] == 'f' && countDot == 2){
+			} else if (this->inputString[this->inputString.size() - 1] == 'f'
+			&& (countDot == 2 || countDot == 1)){
 				this->typeInputString = "float";
 				return;
 			}
