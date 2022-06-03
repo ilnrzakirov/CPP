@@ -11,6 +11,11 @@
 class Casts {
 private:
 	std::string inputString;
+	std::string typeInputString;
+	char _char;
+	int _int;
+	float _float;
+	double  _double;
 public:
 	Casts();
 	Casts(std::string inputString);
