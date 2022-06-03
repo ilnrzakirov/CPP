@@ -51,9 +51,12 @@ Form *Intern::makeForm(std::string formName, std::string formTarget) {
 	}
 	void (*func[3])(std::string target) = {Intern::ReternShrebberyForm(),
 										   Intern::ReternRobotomyForm(),
-										   Intern::ReternPresidentalForm()}
+										   Intern::ReternPresidentalForm()};
 
-
+	if (index != -1){
+		return func[index](formTarget);
+	}
+	throw InternException("Form not found\n");
 
 }
 
