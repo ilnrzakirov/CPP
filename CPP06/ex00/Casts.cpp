@@ -28,3 +28,8 @@ Casts &Casts::operator=(const Casts casts) {
 	this->_char = casts._char;
 	return (*this)
 }
+
+
+void Casts::getType() {
+
+}

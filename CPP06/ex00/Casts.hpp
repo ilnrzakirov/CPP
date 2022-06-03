@@ -7,6 +7,7 @@
 
 #include "iostream"
 #include "string"
+#include "iomanip"
 
 class Casts {
 private:
@@ -23,6 +24,9 @@ public:
 	Casts(const Casts &casts);
 	Casts &operator=(const Casts casts);
 	std::string getInputString();
+	void getType();
+	void castsIntForDouble();
+	void castsChar();
 };
 
 
