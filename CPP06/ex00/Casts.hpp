@@ -9,7 +9,15 @@
 #include "string"
 
 class Casts {
+private:
 	std::string inputString;
+public:
+	Casts();
+	Casts(std::string inputString);
+	~Casts();
+	Casts(const Casts &casts);
+	Casts &operator=(const Casts casts);
+	std::string getInputString();
 };
 
 
