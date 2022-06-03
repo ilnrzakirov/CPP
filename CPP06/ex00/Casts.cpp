@@ -59,5 +59,25 @@ void Casts::getType() {
 		} else {
 			this->typeInputString = "int";
 		}
+	} else {
+		bool isNumber = true;
+		size = this->inputString.size();
+		int i = 0;
+		int countDot = 0;
+		while (i < size - 1){
+			if (isdigit(this->inputString[i]) == 0){
+				if (this->inputString[i] != '.'){
+					isNumber = false;
+					break;
+				}
+				countDot++;
+				if (countDot > 1) {
+					isNumber = false;
+					break;
+				}
+			}
+			i++;
+		}
+
 	}
 }
