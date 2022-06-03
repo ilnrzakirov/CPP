@@ -47,5 +47,11 @@ Casts &Casts::operator=(const Casts casts) {
 
 
 void Casts::getType() {
-
+	if (this->inputString.compare("-inf") == 0 || this->inputString.compare
+	("+inf") == 0 || this->inputString.compare("nan") == 0) {
+		this->typeInputString = "double";
+	} else if (this->inputString.compare("-inff") == 0 || this->inputString
+	.compare("+inff") == 0 || this->inputString.compare("nanf") == 0){
+		this->typeInputString = "float";
+	}
 }
