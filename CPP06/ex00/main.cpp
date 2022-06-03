@@ -9,7 +9,7 @@ int main(int ac, char **av){
 		std::string inputString(av[1]);
 		Casts casts = Casts(inputString);
 		std::cout << casts.getTypeInputString() << "\n";
-		std::cout << casts.getInputString();
+		std::cout << casts.getInputString() << "\n";
 	} catch (std::exception &e) {
 		std::cout << e.what();
 	}

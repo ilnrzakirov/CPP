@@ -132,9 +132,9 @@ void Casts::adapter() {
 void Casts::castsIntToChar() {
 	if (this->_int >= 0 && this->_int <= 127){
 		if (this->_int >= 32 && this->_int < 127){
-
+			std::cout << static_cast<char>(this->_int);
 		} else {
-			std::cout << "Not displayed\n"
+			std::cout << "Not displayed\n";
 		}
 	} else {
 		std::cout << "cannot be translated to char\n";
