@@ -11,7 +11,7 @@ Intern::Intern() {
 	std::cout << "Intern constructor is called\n";
 }
 Intern::~Intern() {
-	std::coutn <, "Intern destructor is called\n";
+	std::cout << "Intern destructor is called\n";
 }
 
 Intern::Intern(const Intern &intern) {
@@ -19,7 +19,6 @@ Intern::Intern(const Intern &intern) {
 }
 
 Intern &Intern::operator=(const Intern intern) {
-	(void*) intern;
 	return (*this);
 }
 
@@ -49,12 +48,13 @@ Form *Intern::makeForm(std::string formName, std::string formTarget) {
 			break;
 		}
 	}
-	void (*func[3])(std::string target) = {Intern::ReternShrebberyForm(),
-										   Intern::ReternRobotomyForm(),
-										   Intern::ReternPresidentalForm()};
+	Form *(Intern::*func[])(std::string target) =
+			{&Intern::ReternShrebberyForm,
+										   &Intern::ReternRobotomyForm,
+										   &Intern::ReternPresidentalForm};
 
 	if (index != -1){
-		return func[index](formTarget);
+		return (this->*func[index])(formTarget);
 	}
 	throw InternException("Form not found\n");
 

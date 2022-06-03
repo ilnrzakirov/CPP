@@ -2,6 +2,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main(void){
 	try {
@@ -37,6 +38,16 @@ int main(void){
 		shrubberyCreationForm.execute(trh);
 //		shrubberyCreationForm.execute(trt);
 	}catch (std::exception &e) {
+		std::cout <<"Error: "  << e.what();
+	}
+
+	try{
+		Bureaucrat bureaucrat2 = Bureaucrat("Harl", 2);
+		Intern intern = Intern();
+		Form *internForm = intern.makeForm("shrubbery", "Hello");
+		internForm->beSigned(bureaucrat2);
+		internForm->execute(bureaucrat2);
+	} catch (std::exception &e) {
 		std::cout <<"Error: "  << e.what();
 	}
 	return (0);
