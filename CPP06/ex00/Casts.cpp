@@ -147,9 +147,9 @@ void Casts::charCase() {
 	this->_int = static_cast<int>(this->_char);
 	std::cout << "int: " << this->_int << "\n";
 	this->_float = static_cast<float>(this->_char);
-	std::cout << "float: " << this->_float << "\n";
+	std::cout << "float: " << this->_float << ".0f\n";
 	this->_double = static_cast<double>(this->_char);
-	std::cout << "double: " << this->_double << "\n";
+	std::cout << "double: " << this->_double << ".0\n";
 }
 
 void Casts::cast() {
