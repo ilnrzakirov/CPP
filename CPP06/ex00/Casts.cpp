@@ -72,6 +72,7 @@ void Casts::getType() {
 			if (isdigit(this->inputString[i]) == 0){
 				if (this->inputString[i] == '-'){
 					sign++;
+					i++;
 					continue;
 				}
 				if (this->inputString[i] != '.'){
