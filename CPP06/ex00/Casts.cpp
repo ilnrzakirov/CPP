@@ -143,7 +143,7 @@ void Casts::castsIntToChar() {
 
 void Casts::charCase() {
 	this->_char = this->inputString[0];
-	std::cout << "char: " << this->_char << "\n";
+	std::cout << "char: '" << this->_char << "'\n";
 	this->_int = static_cast<int>(this->_char);
 	std::cout << "int: " << this->_int << "\n";
 	this->_float = static_cast<float>(this->_char);
