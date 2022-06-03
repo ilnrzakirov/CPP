@@ -33,7 +33,7 @@ public:
 
 	Form();
 	Form(std::string name, int grade_to_sign, int grade_to_execute );
-	~Form();
+	virtual ~Form();
 	void beSigned(Bureaucrat &bureaucrat);
 	int getGradeToSign() const;
 	int getGradeToExecute() const;

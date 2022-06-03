@@ -28,6 +28,8 @@ public:
 	void castsIntToChar();
 	void castsChar();
 	void adapter();
+	void cast();
+	void charCase();
 
 	char getChar() const;
 	std::string getTypeInputString() const;

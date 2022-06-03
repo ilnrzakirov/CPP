@@ -42,11 +42,13 @@ int main(void){
 	}
 
 	try{
+		Form *internForm;
 		Bureaucrat bureaucrat2 = Bureaucrat("Harl", 2);
 		Intern intern = Intern();
-		Form *internForm = intern.makeForm("robotomy request", "Hello");
+		internForm = intern.makeForm("robotomy request", "Hello");
 		internForm->beSigned(bureaucrat2);
 		internForm->execute(bureaucrat2);
+		delete internForm;
 	} catch (std::exception &e) {
 		std::cout <<"Error: "  << e.what();
 	}

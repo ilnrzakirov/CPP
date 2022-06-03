@@ -140,3 +140,20 @@ void Casts::castsIntToChar() {
 		std::cout << "cannot be translated to char\n";
 	}
 }
+
+void Casts::charCase() {
+	this->_char = this->inputString[0];
+	std::cout << "char: " << this->_char << "\n";
+	this->_int = static_cast<int>(this->_char);
+	std::cout << "int: " << this->_int << "\n";
+	this->_float = static_cast<float>(this->_char);
+	std::cout << "float: " << this->_float << "\n";
+	this->_double = static_cast<double>(this->_char);
+	std::cout << "double: " << this->_double << "\n";
+}
+
+void Casts::cast() {
+	if (this->typeInputString.compare("char") == 0){
+		this->charCase();
+	}
+}
