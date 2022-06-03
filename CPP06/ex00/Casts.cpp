@@ -53,5 +53,11 @@ void Casts::getType() {
 	} else if (this->inputString.compare("-inff") == 0 || this->inputString
 	.compare("+inff") == 0 || this->inputString.compare("nanf") == 0){
 		this->typeInputString = "float";
+	} else if (this->inputString.size() == 1){
+		if (isdigit(this->inputString) == 0){
+			this->typeInputString = "char";
+		} else {
+			this->typeInputString = "int";
+		}
 	}
 }
