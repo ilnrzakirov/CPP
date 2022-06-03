@@ -44,7 +44,7 @@ int main(void){
 	try{
 		Bureaucrat bureaucrat2 = Bureaucrat("Harl", 2);
 		Intern intern = Intern();
-		Form *internForm = intern.makeForm("shrubbery", "Hello");
+		Form *internForm = intern.makeForm("robotomy request", "Hello");
 		internForm->beSigned(bureaucrat2);
 		internForm->execute(bureaucrat2);
 	} catch (std::exception &e) {
