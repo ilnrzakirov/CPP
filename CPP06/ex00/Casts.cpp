@@ -8,7 +8,9 @@ Casts::Casts(): inputString(""), typeInputString(""), _char(0), _double(0.0),
 _float(0.0F), _int(0) {}
 
 Casts::Casts(std::string inputString): inputString(inputString),
-typeInputString(""), _char(0), _double(0.0), _float(0.0F), _int(0) {}
+typeInputString(""), _char(0), _double(0.0), _float(0.0F), _int(0) {
+	this->getType();
+}
 
 Casts::~Casts() {}
 
