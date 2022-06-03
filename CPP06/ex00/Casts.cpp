@@ -20,12 +20,28 @@ std::string Casts::getInputString() {
 	return this->inputString;
 }
 
+char Casts::getChar() {
+	return this->_char;
+}
+
+double Casts::getDouble() {
+	return this->_double;
+}
+
+float Casts::getFloat() {
+	return this->_float;
+}
+
+int Casts::getInt() {
+	return this->_int;
+}
+
 Casts &Casts::operator=(const Casts casts) {
 	this->inputString = casts.getInputString();
-	this->_int = casts._int;
-	this->_float = casts._float;
-	this->_double = casts._double;
-	this->_char = casts._char;
+	this->_int = casts.getInt();
+	this->_float = casts.getFloat();
+	this->_double = casts.getDouble();
+	this->_char = casts.getChar();
 	return (*this)
 }
 

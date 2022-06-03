@@ -27,6 +27,11 @@ public:
 	void getType();
 	void castsIntForDouble();
 	void castsChar();
+
+	char getChar();
+	int getInt();
+	float getFloat();
+	double getDouble();
 };
 
 
