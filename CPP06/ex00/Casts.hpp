@@ -23,15 +23,21 @@ public:
 	~Casts();
 	Casts(const Casts &casts);
 	Casts &operator=(const Casts casts);
-	std::string getInputString();
+	std::string getInputString() const;
 	void getType();
 	void castsIntForDouble();
 	void castsChar();
 
-	char getChar();
-	int getInt();
-	float getFloat();
-	double getDouble();
+	char getChar() const;
+	std::string getTypeInputString() const;
+	int getInt() const;
+	float getFloat() const;
+	double getDouble() const;
+
+	class DataException : public std::runtime_error {
+	public: DataException(const std::string &error) : std::runtime_error
+																(error) {};
+	};
 };
 
 

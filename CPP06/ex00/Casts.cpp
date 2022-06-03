@@ -16,23 +16,27 @@ Casts::Casts(const Casts &casts) {
 	*this = casts;
 }
 
-std::string Casts::getInputString() {
+std::string Casts::getInputString() const {
 	return this->inputString;
 }
 
-char Casts::getChar() {
+char Casts::getChar() const {
 	return this->_char;
 }
 
-double Casts::getDouble() {
+std::string Casts::getTypeInputString() const {
+	return this->typeInputString;
+}
+
+double Casts::getDouble()  const{
 	return this->_double;
 }
 
-float Casts::getFloat() {
+float Casts::getFloat() const {
 	return this->_float;
 }
 
-int Casts::getInt() {
+int Casts::getInt() const {
 	return this->_int;
 }
 
@@ -42,7 +46,7 @@ Casts &Casts::operator=(const Casts casts) {
 	this->_float = casts.getFloat();
 	this->_double = casts.getDouble();
 	this->_char = casts.getChar();
-	return (*this)
+	return (*this);
 }
 
 
@@ -54,30 +58,46 @@ void Casts::getType() {
 	.compare("+inff") == 0 || this->inputString.compare("nanf") == 0){
 		this->typeInputString = "float";
 	} else if (this->inputString.size() == 1){
-		if (isdigit(this->inputString) == 0){
+		if (isdigit(this->inputString[0]) == 0){
 			this->typeInputString = "char";
 		} else {
 			this->typeInputString = "int";
 		}
 	} else {
 		bool isNumber = true;
-		size = this->inputString.size();
 		int i = 0;
+		int sign = 0;
 		int countDot = 0;
-		while (i < size - 1){
+		while (i < this->inputString.size() - 1){
 			if (isdigit(this->inputString[i]) == 0){
+				if (this->inputString[i] == '-'){
+					sign++;
+					continue;
+				}
 				if (this->inputString[i] != '.'){
 					isNumber = false;
 					break;
 				}
 				countDot++;
-				if (countDot > 1) {
+				if (countDot > 2) {
 					isNumber = false;
 					break;
 				}
 			}
 			i++;
 		}
-
+		if (isNumber && sign == 1){
+			if (isdigit(this->inputString[i]) != 0 && countDot == 1){
+				this->typeInputString = "double";
+				return;
+			} else if (isdigit(this->inputString[i]) != 0 && countDot == 0){
+				this->typeInputString = "int";
+				return;
+			} else if (this->inputString[this->inputString.size() - 1] == 'f' && countDot == 2){
+				this->typeInputString = "float";
+				return;
+			}
+		}
+		throw DataException("Incorrect data\n");
 	}
 }
