@@ -56,10 +56,10 @@ Casts &Casts::operator=(const Casts casts) {
 void Casts::getType() {
 	if (this->inputString.compare("-inf") == 0 || this->inputString.compare
 	("+inf") == 0 || this->inputString.compare("nan") == 0) {
-		this->typeInputString = "double";
+		this->typeInputString = "optional";;
 	} else if (this->inputString.compare("-inff") == 0 || this->inputString
 	.compare("+inff") == 0 || this->inputString.compare("nanf") == 0){
-		this->typeInputString = "float";
+		this->typeInputString = "optional";;
 	} else if (this->inputString.size() == 1){
 		if (isdigit(this->inputString[0]) == 0){
 			this->typeInputString = "char";
@@ -128,7 +128,6 @@ void Casts::adapter() {
 			}
 		}
 	}
-	this->typeInputString = "optional";
 }
 
 void Casts::castsIntToChar() {
@@ -188,12 +187,12 @@ void Casts::doubleCase() {
 
 void Casts::optionalCase() {
 	this->_double = std::stod(this->inputString);
-	castsIntToChar();
-	this->_double = std::stod(this->inputString);
+	std::cout << "char: impossible\n";
+	this->_float = static_cast<float>(this->_double);
 	this->_int = static_cast<int>(this->_double);
-	std::cout << "int: " << this->_int << "\n";
-	std::cout << "float: " << this->inputString << "f\n";
-	std::cout << "double: " << this->_double << ".0\n";
+	std::cout << "int: impossible\n";
+	std::cout << "float: " << this->_float << "f\n";
+	std::cout << "double: " << this->_double << "\n";
 }
 
 void Casts::cast() {
