@@ -34,6 +34,7 @@ public:
 	void intCase();
 	void floatCase();
 	void doubleCase();
+	void optionalCase();
 
 	char getChar() const;
 	std::string getTypeInputString() const;

@@ -128,6 +128,7 @@ void Casts::adapter() {
 			}
 		}
 	}
+	this->typeInputString = "optional";
 }
 
 void Casts::castsIntToChar() {
@@ -155,27 +156,27 @@ void Casts::charCase() {
 }
 
 void Casts::intCase() {
-	this->_int = atoi(this->inputString);
+	this->_double = std::stod(this->inputString);
+	this->_int = static_cast<int>(this->_double);
 	castsIntToChar();
 	std::cout << "int: " << this->_int << "\n";
 	this->_float = static_cast<float>(this->_int);
 	std::cout << "float: " << this->_float << ".0f\n";
-	this->_double = static_cast<double>(this->_int);
 	std::cout << "double: " << this->_double << ".0\n";
 }
 
 void Casts::floatCase() {
-	this->_float = static_cast<float>(this->inputString);
-	this->_int = static_cast<int>(this->inputString);
+	this->_double = std::stod(this->inputString);
+	this->_float = static_cast<float>(this->_double);
+	this->_int = static_cast<int>(this->_double);
 	castsIntToChar();
 	std::cout << "int: " << this->_int << "\n";
-	std::cout << "float: " << this->_float << "\n";
-	this->_double = static_cast<double>(this->_float);
+	std::cout << "float: " << this->_float << "f\n";
 	std::cout << "double: " << this->_double << "\n";
 }
 
 void Casts::doubleCase() {
-	this->_double = static_cast<double>(this->inputString);
+	this->_double = std::stod(this->inputString);
 	this->_int = static_cast<int>(this->_double);
 	this->_float = static_cast<float>(this->_double);
 	castsIntToChar();
@@ -185,6 +186,16 @@ void Casts::doubleCase() {
 
 }
 
+void Casts::optionalCase() {
+	this->_double = std::stod(this->inputString);
+	castsIntToChar();
+	this->_double = std::stod(this->inputString);
+	this->_int = static_cast<int>(this->_double);
+	std::cout << "int: " << this->_int << "\n";
+	std::cout << "float: " << this->inputString << "f\n";
+	std::cout << "double: " << this->_double << ".0\n";
+}
+
 void Casts::cast() {
 	if (this->typeInputString.compare("char") == 0){
 		this->charCase();
@@ -192,7 +203,9 @@ void Casts::cast() {
 		this->intCase();
 	} else if (this->typeInputString.compare("float") == 0) {
 		this->floatCase();
-	} else {
+	} else if (this->typeInputString.compare("double") == 0) {
 		this->doubleCase();
+	} else {
+		this->optionalCase();
 	}
 }
