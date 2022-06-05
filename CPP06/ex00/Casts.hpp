@@ -47,6 +47,11 @@ public:
 	public: DataException(const std::string &error) : std::runtime_error
 																(error) {};
 	};
+
+	class OverflowException : public std::runtime_error {
+	public: OverflowException(const std::string &error) : std::runtime_error
+															  (error) {};
+	};
 };
 
 

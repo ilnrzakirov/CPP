@@ -153,10 +153,13 @@ void Casts::charCase() {
 	this->_char = this->inputString[0];
 	std::cout << "char: '" << this->_char << "'\n";
 	try {
+		if ((_double > 0 && _double - 2147483647 > 0) || (_double < 0 && _double
+																		 + 2147483648 < 0))
+			throw OverflowException("int: overflow\n");
 		this->_int = static_cast<int>(this->_char);
 		std::cout << "int: " << this->_int << "\n";
 	} catch (std::exception &e) {
-		std::cout << "int: " << "overflow" << "\n";
+		std::cout << e.what();
 	}
 	this->_float = static_cast<float>(this->_char);
 	std::cout << "float: " << this->_float << ".0f\n";
@@ -168,12 +171,15 @@ void Casts::intCase() {
 	this->_double = std::stod(this->inputString);
 	castsIntToChar();
 	try {
+		if ((_double > 0 && _double - 2147483647 > 0) || (_double < 0 && _double
+																		 + 2147483648 < 0))
+			throw OverflowException("int: overflow\n");
 		this->_int = static_cast<int>(this->_double);
 		std::cout << "int: " << this->_int << "\n";
 	} catch (std::exception &e) {
-		std::cout << "int: " << "overflow" << "\n";
+		std::cout << e.what();
 	}
-	this->_float = static_cast<float>(this->_int);
+	this->_float = static_cast<float>(this->_double);
 	std::cout << "float: " << this->_float << ".0f\n";
 	std::cout << "double: " << this->_double << ".0\n";
 }
@@ -183,10 +189,13 @@ void Casts::floatCase() {
 	this->_float = static_cast<float>(this->_double);
 	castsIntToChar();
 	try {
+		if ((_double > 0 && _double - 2147483647 > 0) || (_double < 0 && _double
+																		 + 2147483648 < 0))
+			throw OverflowException("int: overflow\n");
 		this->_int = static_cast<int>(this->_double);
 		std::cout << "int: " << this->_int << "\n";
 	} catch (std::exception &e) {
-		std::cout << "int: " << "overflow" << "\n";
+		std::cout << e.what();
 	}
 	std::cout << "float: " << this->_float << "f\n";
 	std::cout << "double: " << this->_double << "\n";
@@ -197,10 +206,13 @@ void Casts::doubleCase() {
 	this->_float = static_cast<float>(this->_double);
 	castsIntToChar();
 	try {
+		if ((_double > 0 && _double - 2147483647 > 0) || (_double < 0 && _double
+																		 + 2147483648 < 0))
+			throw OverflowException("int: overflow\n");
 		this->_int = static_cast<int>(this->_double);
 		std::cout << "int: " << this->_int << "\n";
 	} catch (std::exception &e) {
-		std::cout << "int: " << "overflow" << "\n";
+		std::cout << e.what();
 	}
 	std::cout << "float: " << this->_float << "f\n";
 	std::cout << "double: " << this->_double << "\n";
