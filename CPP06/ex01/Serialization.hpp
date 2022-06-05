@@ -1,0 +1,22 @@
+//
+// Created by Becki Carlee on 6/5/22.
+//
+
+#ifndef CPP_SERIALIZATION_HPP
+#define CPP_SERIALIZATION_HPP
+
+#include <iostream>
+#include <string>
+
+struct Serialization {
+	char c;
+	int i;
+	float f;
+	double d;
+};
+
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
+
+
+#endif //CPP_SERIALIZATION_HPP
