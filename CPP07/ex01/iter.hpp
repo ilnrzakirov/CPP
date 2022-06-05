@@ -12,5 +12,9 @@ void iter(T *array, size_t len, void (* func)(T&)){
 	}
 }
 
+template <class T>
+void printT(T &a){
+	std::cout << a <<"\n";
+}
 
 #endif
