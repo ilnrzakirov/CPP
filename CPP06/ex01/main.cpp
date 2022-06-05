@@ -18,6 +18,13 @@ int main(void){
 	serialization->f = 0.045f;
 	serialization->i = 9;
 
+	std::cout << "before: \n" << "char: " << serialization->c << "\ndouble: "
+	<< serialization->d << "\nfloat: " << serialization->f << "\nint: " <<
+	serialization->i <<"\n\n";
 	uintptr_t serializationData = serialize(serialization);
 	struct Serialization *reternData = deserialize(serializationData);
+
+	std::cout << "\nafter: \n" << "char: " << serialization->c << "\ndouble: "
+			  << serialization->d << "\nfloat: " << serialization->f << "\nint: " <<
+			  serialization->i <<"\n";
 }
