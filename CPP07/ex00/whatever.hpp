@@ -31,7 +31,11 @@ T max(const T &a, const T &b){
 
 template <class T>
 T swap(T &a, T &b){
+	T temp;
 
+	temp = a;
+	a = b;
+	b = temp;
 }
 
 #endif //CPP_WHATEVER_HPP
