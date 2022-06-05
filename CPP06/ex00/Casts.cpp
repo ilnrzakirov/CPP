@@ -140,7 +140,7 @@ void Casts::castsIntToChar() {
 	std::cout << "char: ";
 	if (this->_int >= 0 && this->_int <= 127){
 		if (this->_int >= 32 && this->_int < 127){
-			std::cout << static_cast<char>(this->_int);
+			std::cout << "'" << static_cast<char>(this->_int) << "'\n";
 		} else {
 			std::cout << "Not displayed\n";
 		}
@@ -169,12 +169,12 @@ void Casts::charCase() {
 
 void Casts::intCase() {
 	this->_double = std::stod(this->inputString);
-	castsIntToChar();
 	try {
 		if ((_double > 0 && _double - 2147483647 > 0) || (_double < 0 && _double
 																		 + 2147483648 < 0))
 			throw OverflowException("int: overflow\n");
 		this->_int = static_cast<int>(this->_double);
+		castsIntToChar();
 		std::cout << "int: " << this->_int << "\n";
 	} catch (std::exception &e) {
 		std::cout << e.what();
@@ -187,12 +187,12 @@ void Casts::intCase() {
 void Casts::floatCase() {
 	this->_double = std::stod(this->inputString);
 	this->_float = static_cast<float>(this->_double);
-	castsIntToChar();
 	try {
 		if ((_double > 0 && _double - 2147483647 > 0) || (_double < 0 && _double
 																		 + 2147483648 < 0))
 			throw OverflowException("int: overflow\n");
 		this->_int = static_cast<int>(this->_double);
+		castsIntToChar();
 		std::cout << "int: " << this->_int << "\n";
 	} catch (std::exception &e) {
 		std::cout << e.what();
@@ -204,12 +204,12 @@ void Casts::floatCase() {
 void Casts::doubleCase() {
 	this->_double = std::stod(this->inputString);
 	this->_float = static_cast<float>(this->_double);
-	castsIntToChar();
 	try {
 		if ((_double > 0 && _double - 2147483647 > 0) || (_double < 0 && _double
 																		 + 2147483648 < 0))
 			throw OverflowException("int: overflow\n");
 		this->_int = static_cast<int>(this->_double);
+		castsIntToChar();
 		std::cout << "int: " << this->_int << "\n";
 	} catch (std::exception &e) {
 		std::cout << e.what();
