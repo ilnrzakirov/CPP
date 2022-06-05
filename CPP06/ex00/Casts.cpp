@@ -112,6 +112,12 @@ void Casts::setNumber(std::string setNum) {
 }
 
 void Casts::adapter() {
+	if (this->inputString.compare(".f") == 0 || this->inputString.compare("-"
+																		  ".f") == 0)
+		throw DataException("Incorrect data\n");
+	if (this->inputString[this->inputString.size() - 1] == 'f' &&
+	this->inputString[this->inputString.size() - 2] == '.')
+		throw DataException("Incorrect data\n");
 	if (this->typeInputString.compare("float") == 0 || this->typeInputString
 	.compare("double") == 0){
 		if (this->inputString[0] == '.'){
