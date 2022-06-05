@@ -152,8 +152,12 @@ void Casts::castsIntToChar() {
 void Casts::charCase() {
 	this->_char = this->inputString[0];
 	std::cout << "char: '" << this->_char << "'\n";
-	this->_int = static_cast<int>(this->_char);
-	std::cout << "int: " << this->_int << "\n";
+	try {
+		this->_int = static_cast<int>(this->_char);
+		std::cout << "int: " << this->_int << "\n";
+	} catch (std::exception &e) {
+		std::cout << "int: " << "overflow" << "\n";
+	}
 	this->_float = static_cast<float>(this->_char);
 	std::cout << "float: " << this->_float << ".0f\n";
 	this->_double = static_cast<double>(this->_char);
@@ -162,9 +166,13 @@ void Casts::charCase() {
 
 void Casts::intCase() {
 	this->_double = std::stod(this->inputString);
-	this->_int = static_cast<int>(this->_double);
 	castsIntToChar();
-	std::cout << "int: " << this->_int << "\n";
+	try {
+		this->_int = static_cast<int>(this->_double);
+		std::cout << "int: " << this->_int << "\n";
+	} catch (std::exception &e) {
+		std::cout << "int: " << "overflow" << "\n";
+	}
 	this->_float = static_cast<float>(this->_int);
 	std::cout << "float: " << this->_float << ".0f\n";
 	std::cout << "double: " << this->_double << ".0\n";
@@ -173,19 +181,27 @@ void Casts::intCase() {
 void Casts::floatCase() {
 	this->_double = std::stod(this->inputString);
 	this->_float = static_cast<float>(this->_double);
-	this->_int = static_cast<int>(this->_double);
 	castsIntToChar();
-	std::cout << "int: " << this->_int << "\n";
+	try {
+		this->_int = static_cast<int>(this->_double);
+		std::cout << "int: " << this->_int << "\n";
+	} catch (std::exception &e) {
+		std::cout << "int: " << "overflow" << "\n";
+	}
 	std::cout << "float: " << this->_float << "f\n";
 	std::cout << "double: " << this->_double << "\n";
 }
 
 void Casts::doubleCase() {
 	this->_double = std::stod(this->inputString);
-	this->_int = static_cast<int>(this->_double);
 	this->_float = static_cast<float>(this->_double);
 	castsIntToChar();
-	std::cout << "int: " << this->_int << "\n";
+	try {
+		this->_int = static_cast<int>(this->_double);
+		std::cout << "int: " << this->_int << "\n";
+	} catch (std::exception &e) {
+		std::cout << "int: " << "overflow" << "\n";
+	}
 	std::cout << "float: " << this->_float << "f\n";
 	std::cout << "double: " << this->_double << "\n";
 
