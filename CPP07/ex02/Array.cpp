@@ -43,3 +43,11 @@ template <class T>
 const unsigned int Array<T>::size() const {
 	return this->_size;
 }
+
+template <class T>
+T &Array<T>::operator[](unsigned int index) {
+	if (index < size)
+		return this->arr[index];
+	else
+		throw std::runtime_error("Array index out of bounds\n");
+}
