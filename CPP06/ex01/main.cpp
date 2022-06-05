@@ -15,7 +15,7 @@ int main(void){
 	struct Serialization *serialization = new Serialization;
 	serialization->c = 's';
 	serialization->d = 0.0023;
-	serialization->f = 0.045f;
+	serialization->f = 0.045F;
 	serialization->i = 9;
 
 	std::cout << "before: \n" << "char: " << serialization->c << "\ndouble: "
