@@ -49,5 +49,6 @@ void identify(Base& p) {
 }
 
 int main(void){
+	Base *base = generate();
 
 }
