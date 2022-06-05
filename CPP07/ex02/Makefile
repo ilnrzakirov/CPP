@@ -3,7 +3,6 @@ NAME		=	Array
 OBJS_DIR	=	./objs/
 
 SRC			=	main.cpp	\
-				Array.cpp
 
 
 HEADERS		= 	Array.hpp
