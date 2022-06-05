@@ -5,11 +5,14 @@
 #ifndef CPP_ARRAY_HPP
 #define CPP_ARRAY_HPP
 
+#include <iostream>
+#include <string>
+
 template <class T>
 class Array {
 private:
 	T *arr;
-	unsigned int size;
+	unsigned int _size;
 public:
 	Array();
 	Array(unsigned int n);
@@ -17,7 +20,7 @@ public:
 	Array(const Array &other);
 	Array &operator=(const Array &other);
 	T &operator[](unsigned int index);
-	const unsigned int &size() const;
+	const unsigned int size() const;
 };
 
 
