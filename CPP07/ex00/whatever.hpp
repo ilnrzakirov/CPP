@@ -30,7 +30,7 @@ T max(const T &a, const T &b){
 }
 
 template <class T>
-T swap(T &a, T &b){
+void swap(T &a, T &b){
 	T temp;
 
 	temp = a;
