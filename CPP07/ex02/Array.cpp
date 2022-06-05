@@ -26,3 +26,20 @@ Array<T>::Array(const Array<T> &other) : _size(other._size) {
 	for (int i = 0; i < this->_size; i++)
 		this->arr[i] = 0;
 }
+
+template <class T>
+Array<T> &Array<T>::operator=(const Array<T> &other) {
+	if (this != other){
+		this->_size = other._size;
+		delete [] this->arr;
+		this->arr = new T[this->_size];
+		for (int i = 0; i < this->_size; i++)
+			this->arr[i] = 0;
+	}
+	return (*this);
+}
+
+template <class T>
+const unsigned int Array<T>::size() const {
+	return this->_size;
+}
