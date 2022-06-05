@@ -65,7 +65,7 @@ const unsigned int Array<T>::size() const {
 
 template <class T>
 T &Array<T>::operator[](unsigned int index) {
-	if (index < this->_size)
+	if (index < this->_size && index >= 0)
 		return this->arr[index];
 	else
 		throw std::runtime_error("Array index out of bounds\n");
