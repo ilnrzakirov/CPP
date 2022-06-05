@@ -1,14 +1,14 @@
 #include "Serialization.hpp"
 
 
-uintptr_t serialize(Data* ptr){
+uintptr_t serialize(Serialization* ptr){
 	std::cout << "Serialization of data\n";
 	return reinterpret_cast<uintptr_t>(ptr);
 }
 
-Data* deserialize(uintptr_t raw){
+Serialization* deserialize(uintptr_t raw){
 	std::cout << "Deserialization of data\n";
-	return reinterpret_cast<Data *>(raw);
+	return reinterpret_cast<Serialization *>(raw);
 }
 
 int main(void){
