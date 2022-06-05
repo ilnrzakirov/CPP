@@ -28,7 +28,7 @@ void identify(Base* p){
 		std::cout << "A\n";
 	} else if (b) {
 		std::cout << "B\n";
-	} else {
+	} else if (c) {
 		std::cout << "C\n";
 	}
 }
