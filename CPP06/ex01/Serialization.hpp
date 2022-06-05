@@ -15,8 +15,8 @@ struct Serialization {
 	double d;
 };
 
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
+uintptr_t serialize(Serialization* ptr);
+Serialization* deserialize(uintptr_t raw);
 
 
 #endif //CPP_SERIALIZATION_HPP

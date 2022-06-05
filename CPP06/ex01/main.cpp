@@ -12,11 +12,12 @@ Data* deserialize(uintptr_t raw){
 }
 
 int main(void){
-	struct Serialization *serialization = new serialization;
+	struct Serialization *serialization = new Serialization;
 	serialization->c = 's';
 	serialization->d = 0.0023;
 	serialization->f = 0.045f;
 	serialization->i = 9;
 
-
+	uintptr_t serializationData = serialize(serialization);
+	struct Serialization *reternData = deserialize(serializationData);
 }
