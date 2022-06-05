@@ -3,9 +3,13 @@ NAME		=	Identify
 OBJS_DIR	=	./objs/
 
 SRC			=	main.cpp	\
+				A.cpp\
+				B.cpp\
+				C.cpp\
+				Base.cpp\
 
 
-HEADERS		= 	Serialization.hpp
+HEADERS		= 	Base.hpp A.hpp B.hpp C.hpp
 
 CC			=	c++
 
