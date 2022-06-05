@@ -14,7 +14,7 @@ Base *generate(void){
 		case 1:
 			return new B();
 		case 2:
-			return new C()l
+			return new C();
 	}
 	return NULL;
 }
@@ -45,14 +45,16 @@ void identify(Base& p) {
 	try {
 		C &c = dynamic_cast<C&>(p);
 		std::cout << "C\n";
-	}
+	} catch (std::bad_cast &e){}
 }
 
 int main(void){
 	Base *base = generate();
 
+	std::cout << "identify(base): ";
 	identify(base);
-	identify(&base);
+	std::cout << "identify(&base): ";
+	identify(*base);
 
 	delete base;
 }
