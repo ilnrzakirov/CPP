@@ -27,4 +27,6 @@ int main(void){
 	std::cout << "\nafter: \n" << "char: " << serialization->c << "\ndouble: "
 			  << serialization->d << "\nfloat: " << serialization->f << "\nint: " <<
 			  serialization->i <<"\n";
+
+	return 0;
 }

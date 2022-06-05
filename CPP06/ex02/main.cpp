@@ -57,4 +57,5 @@ int main(void){
 	identify(*base);
 
 	delete base;
+	return 0;
 }
