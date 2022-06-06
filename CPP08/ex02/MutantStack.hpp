@@ -10,7 +10,10 @@
 
 template <class T>
 class MutantStack : std::stack<T> {
-
+public:
+		MutantStack();
+		~MutantStack();
+		MutantStack(const MutantStack<T> &mutantStack);
 };
 
 
