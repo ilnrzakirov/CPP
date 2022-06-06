@@ -46,5 +46,20 @@ int Span::longestSpan() {
 		max = *std::max_element(vector.begin(), vector.end());
 		return std::abs(max - min);
 	}
+}
 
+int Span::shortestSpan() {
+	int res = INT_MAX;
+	if (this->vector.size() < 2) {
+		throw std::runtime_error("the container contains less than two "
+								 "elements\n");
+	}
+	std::sort(vector.begin(), vector.end());
+	for (int i = 0; i < vector.size() - 1; ++i) {
+		int dis = std::abs(vector.at(i) - vector.at(i + 1));
+		if (dis < res) {
+			res = dis;
+		}
+	}
+	return res;
 }
