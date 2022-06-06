@@ -6,11 +6,11 @@
 
 template <class T>
 int easyfind(T &t, int i){
-	T::itertor itertor;
-	itertor = std::find(t.begin(), t.end(), i);
+	typename T::iterator iterator;
+	iterator = std::find(t.begin(), t.end(), i);
 
-	if (itertor != te.end){
-		return *itertor;
+	if (iterator != t.end()){
+		return *iterator;
 	} else {
 		throw std::runtime_error("Not found");
 	}
