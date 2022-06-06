@@ -33,6 +33,7 @@ int main(void) {
 	}
 	try {
 		std::cout << easyfind(set, 0) << "\n";
+		std::cout << easyfind(set, 8) << "\n";
 	} catch (std::exception &e) {
 		std::cout << e.what();
 	}
