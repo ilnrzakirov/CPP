@@ -3,10 +3,9 @@ NAME		=	MutantStack
 OBJS_DIR	=	./objs/
 
 SRC			=	main.cpp	\
-				Span.cpp
 
 
-HEADERS		= 	Span.hpp
+HEADERS		= 	MutantStack.hpp
 
 CC			=	c++
 
