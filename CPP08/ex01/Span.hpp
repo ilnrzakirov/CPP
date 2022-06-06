@@ -15,7 +15,6 @@ private:
 	unsigned int size;
 	std::vector<int> vector;
 public:
-	Span();
 	~Span();
 	Span(unsigned int size);
 	Span(Span &span);

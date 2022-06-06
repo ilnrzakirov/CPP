@@ -4,19 +4,18 @@
 
 #include "Span.hpp"
 
-Span::Span() {}
-
-Span::Span(unsigned int size) : size(size) {}
+Span::Span(unsigned int size) {
+	this->size = size;
+}
 
 Span::Span(Span &span) {
 	*this = span;
 }
 
 Span &Span::operator=(Span &span) {
-	if (this != span){
-		this->size = span.size;
-		this->vector = span.vector;
-	}
+	this->size = span.size;
+	this->vector = span.vector;
+	return (*this);
 }
 
 void Span::addNumber(int i) {
