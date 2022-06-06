@@ -13,7 +13,8 @@ class MutantStack : std::stack<T> {
 public:
 		MutantStack();
 		~MutantStack();
-		MutantStack(const MutantStack<T> &mutantStack);
+		MutantStack(const MutantStack<T> &mutantStack) : std::stack<T>
+		        (mutantStack) {};
 };
 
 
