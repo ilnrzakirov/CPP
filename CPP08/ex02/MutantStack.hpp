@@ -4,9 +4,12 @@
 
 #ifndef CPP_MUTANTSTACK_HPP
 #define CPP_MUTANTSTACK_HPP
+#include <iostream>
+#include <string>
+#include <stack>
 
-
-class MutantStack {
+template <class T>
+class MutantStack : std::stack<T> {
 
 };
 
