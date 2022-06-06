@@ -15,6 +15,10 @@ public:
 		~MutantStack();
 		MutantStack(const MutantStack<T> &mutantStack) : std::stack<T>
 		        (mutantStack) {};
+		MutantStack const &operator=(MutantStack<T> &mutantStack){
+			std::stack<T>::operator=(mutantStack);
+			return (*this);
+		}
 };
 
 
