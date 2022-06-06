@@ -22,8 +22,8 @@ public:
 	Span &operator=(Span &span);
 
 	void addNumber(int i);
-	void shortestSpan();
-	void longestSpan();
+	int shortestSpan();
+	int longestSpan();
 	void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
 
