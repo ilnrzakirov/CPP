@@ -2,6 +2,8 @@
 #include <vector>
 
 int main(void){
+	std::cout << std::endl;
+	std::cout << "Append: \n";
 	Span sp(5);
 	sp.addNumber(6);
 	sp.addNumber(3);
@@ -16,6 +18,8 @@ int main(void){
 	vector.push_back(2);
 	vector.push_back(3);
 	Span a(3);
+	std::cout << std::endl;
+	std::cout << "Range: \n";
 	a.addRange(vector.begin(), vector.end());
 	std::cout << a.shortestSpan() << std::endl;
 	std::cout << a.longestSpan() << std::endl;
