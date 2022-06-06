@@ -7,6 +7,7 @@
 Span::Span(unsigned int size) {
 	this->size = size;
 }
+Span::~Span() {}
 
 Span::Span(Span &span) {
 	*this = span;
