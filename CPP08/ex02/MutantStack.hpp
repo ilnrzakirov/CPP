@@ -10,11 +10,11 @@
 #include <algorithm>
 
 template <class T>
-class MutantStack : std::stack<T> {
+class MutantStack : public std::stack<T> {
 public:
 	typedef typename std::stack<T>::container_type::iterator iterator;
-		MutantStack();
-		~MutantStack();
+		MutantStack() {};
+		~MutantStack() {};
 		MutantStack(const MutantStack<T> &mutantStack) : std::stack<T>
 		        (mutantStack) {};
 		MutantStack const &operator=(MutantStack<T> &mutantStack){
